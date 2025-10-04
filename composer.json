@@ -1,0 +1,65 @@
+{
+  "name": "dghyse/blog-fractal-cms",
+  "description": "Blog with Fractal Cms",
+  "keywords": ["blog", "blog", "fractal-cms", "fractalCms"],
+  "homepage": "https://github.com/dghyse/blog-fractal-cms",
+  "type": "project",
+  "license": "proprietary",
+  "support": {
+    "issues": "https://github.com/dghyse/blog-fractal-cms/issues"
+  },
+  "authors": [
+    {
+      "name": "David Ghyse",
+      "email": "davidg@webcraftdg.fr"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/dghyse/fractal-cms.git"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "ext-dom": "*",
+    "ext-intl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-gd": "*",
+    "ext-fileinfo": "*",
+    "vlucas/phpdotenv": "~5.0",
+    "yiisoft/yii2": "~2.0",
+    "yiisoft/yii2-redis": "~2.0",
+    "dghyse/fractal-cms": "v1.3.3"
+  },
+  "require-dev" : {
+    "yiisoft/yii2-debug":"~2.0",
+    "yiisoft/yii2-gii":"~2.0"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "console\\": "console",
+      "app\\": "common",
+      "webapp\\": "webapp"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+    ]
+  }
+}
