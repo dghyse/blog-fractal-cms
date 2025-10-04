@@ -1,0 +1,47 @@
+<?php
+/**
+ * main.php
+ *
+ * PHP Version 8.2+
+ *
+ * @version XXX
+ * @package webapp\views\layouts
+ *
+ * @var $this yii\web\View
+ * @var $content string
+ */
+
+use yii\helpers\Html;
+use webapp\assets\WebpackAsset;
+use webapp\assets\StaticAsset;
+
+WebpackAsset::register($this);
+$baseUrl = StaticAsset::register($this)->baseUrl;
+Yii::$app->response->headers->set('X-Frame-Options', 'ALLOW-FROM \'self\'');
+Yii::$app->response->headers->set('X-Content-Type-Options', 'nosniff');
+$this->beginPage();
+$url = Yii::$app->request->url;
+$class = 'wrapper';
+?>
+<!DOCTYPE html>
+<?php echo Html::beginTag('html', ['lang' => Yii::$app->language]); ?>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>
+            <?php echo $this->title; ?>
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <?php echo Html::tag('link', '', ['rel' => 'icon', 'href' => $baseUrl.'/img/favicon.ico', 'sizes' => 'any']);?>
+        <?php echo Html::tag('meta', '', ['name' => 'X-Version', 'content' => Yii::$app->version]); ?>
+        <?php $this->head(); ?>
+    </head>
+<?php echo Html::beginTag('body', ['class' => 'bg-gray-50 text-gray-900 font-sans']); ?>
+<?php $this->beginBody(); ?>
+    <?php
+    echo $content;
+    ?>
+<?php $this->endBody(); ?>
+<?php echo Html::endTag('body'); ?>
+<?php echo Html::endTag('html'); ?>
+<?php $this->endPage();
