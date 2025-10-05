@@ -30,3 +30,45 @@ npm run watch
 ```
 npm run dist-clean
 ```
+## Init CMS
+
+### Create Rbac
+
+``
+php yii.php cms:rbac/index
+``
+
+### Create Admin
+``
+php yii.php cms:admin/create
+``
+### INIT content
+
+``
+php yii.php cms:init/index
+``
+### Create Blog
+
+``
+php yii.php blog/create
+``
+
+## Config application
+
+### Add module fractal-cms in config file
+
+```php 
+    'bootstrap' => [
+        'fractal-cms',
+        //../..
+    ],
+    'modules' => [
+        'fractal-cms' => [
+            'class' => FractalCmsModule::class
+        ],
+        //../..
+    ],
+```
+
+
+

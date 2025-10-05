@@ -6,7 +6,7 @@
  *
  * @author David Ghyse <david.ghysefree.fr>
  * @version XXX
- * @package app\config
+ * @package app\controllers
  */
 
 namespace webapp\controllers;

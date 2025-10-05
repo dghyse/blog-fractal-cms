@@ -28,6 +28,7 @@ $config = [
     'aliases' => [
         '@approot' => dirname(__DIR__, 2),
         '@app' => dirname(__DIR__) . '/',
+        '@data' => dirname(__DIR__, 2) . '/data',
         '@webapp' => dirname(__DIR__, 2) . '/webapp',
         '@console' => dirname(__DIR__, 2) . '/console',
         '@modules' => dirname(__DIR__, 2) . '/modules',

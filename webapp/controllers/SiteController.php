@@ -13,10 +13,7 @@ namespace webapp\controllers;
 
 
 use fractalCms\actions\SitemapAction;
-use fractalCms\helpers\Cms;
 use fractalCms\models\Content;
-use webapp\actions\RobotTxtAction;
-use webapp\helpers\MenuBuilder;
 use Yii;
 use Exception;
 use yii\helpers\Url;
@@ -38,9 +35,6 @@ class SiteController extends Controller
         $actions = parent::actions();
         $actions['sitemap'] = [
             'class' => SitemapAction::class
-        ];
-        $actions['robot-txt'] = [
-            'class' => RobotTxtAction::class
         ];
         return $actions;
     }
