@@ -35,17 +35,17 @@ npm run dist-clean
 ### Create Rbac
 
 ``
-php yii.php cms:rbac/index
+php yii.php fractalCms:rbac/index
 ``
 
 ### Create Admin
 ``
-php yii.php cms:admin/create
+php yii.php fractalCms:admin/create
 ``
 ### INIT content
 
 ``
-php yii.php cms:init/index
+php yii.php fractalCms:init/index
 ``
 ### Create Blog
 

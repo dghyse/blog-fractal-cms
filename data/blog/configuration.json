@@ -1,0 +1,136 @@
+[
+  {
+    "name": "home",
+    "configType": "generic",
+    "model": "section",
+    "pathKey": "1",
+    "parentPathKey": null,
+    "slug": {
+        "path": "accueil"
+    },
+    "seo": {
+      "title": "Blog : accueil",
+      "description": "Mon blog, vitrine me permettant de montrer qui je suis, ce que j'ai déjà réalisé et vers où je veux aller",
+      "imgPath": "@data/blog/images/blog_banner_1200x350.webp",
+      "active": 1,
+      "priority": 1,
+      "ogMeta" : 1,
+      "twitterMeta" : 1,
+      "addJsonLd" : 1
+    },
+    "items": [
+      {
+        "type": "entete",
+        "title": "Mon blog page accueil",
+        "subtitle" : null,
+        "description": "Mon blog, vitrine me permettant de montrer qui je suis, ce que j'ai déjà réalisé et vers où je veux aller",
+        "banner": "@data/blog/images/blog_banner_1200x350.webp",
+        "alt" : "Bannière accueil"
+      },
+      {
+        "type": "titre",
+        "title": "Ma première réalisation",
+        "icon": null
+      },
+      {
+        "type": "image-html",
+        "html": "<p>Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.</p>",
+        "image": "@data/blog/images/blog_article_300x300.webp",
+        "choix": "left"
+      },
+      {
+        "type": "titre",
+        "title": "Ma deuxième réalisation",
+        "icon": null
+      },
+      {
+        "type": "image-html",
+        "html": "<p>Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.</p>",
+        "image": "@data/blog/images/blog_article_300x300.webp",
+        "choix": "right"
+      }
+    ]
+  },
+  {
+    "name": "article 1",
+    "configType": "generic",
+    "model": "article",
+    "pathKey": "1.1",
+    "parentPathKey": "1",
+    "slug": {
+      "path": "article-1"
+    },
+    "seo": {
+      "title": "Blog : ma première réalisation",
+      "description": "Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.",
+      "imgPath": "@data/blog/images/article_blog_1200x500.webp",
+      "active": 1,
+      "priority": 0.5,
+      "ogMeta" : 1,
+      "twitterMeta" : 1,
+      "addJsonLd" : 1
+    },
+    "items": [
+      {
+        "type": "entete",
+        "title": "Ma première réalisation",
+        "subtitle" : null,
+        "description": "Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.",
+        "banner": "@data/blog/images/article_blog_1200x500.webp",
+        "alt" : "Bannière article 1"
+      },
+      {
+        "type": "titre",
+        "title": "Ma première réalisation",
+        "icon": null
+      },
+      {
+        "type": "image-html",
+        "html": "<p>Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.</p>",
+        "image": null,
+        "choix": null
+      }
+    ]
+  },
+  {
+    "name": "article 2",
+    "configType": "generic",
+    "model": "article",
+    "pathKey": "1.2",
+    "parentPathKey": "1",
+    "slug": {
+      "path": "article-2"
+    },
+    "seo": {
+      "title": "Blog : ma deuxième réalisation",
+      "description": "Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.",
+      "imgPath": "@data/blog/images/article_blog_1200x500.webp",
+      "priority": 0.5,
+      "active": 1,
+      "ogMeta" : 1,
+      "twitterMeta" : 1,
+      "addJsonLd" : 1
+    },
+    "items": [
+      {
+        "type": "entete",
+        "title": "Ma deuxième réalisation",
+        "subtitle" : null,
+        "description": "Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.",
+        "banner": "@data/blog/images/article_blog_1200x500.webp",
+        "alt" : "Bannière article 2"
+      },
+      {
+        "type": "titre",
+        "title": "Ma deuxième réalisation",
+        "icon": null
+      },
+      {
+        "type": "image-html",
+        "html": "<p>Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.</p>",
+        "image": null,
+        "choix": null
+      }
+    ]
+  }
+]

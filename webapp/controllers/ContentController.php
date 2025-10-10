@@ -75,6 +75,7 @@ class ContentController extends CmsController
         }
     }
 
+    /*
     public function actionArticle()
     {
         try {
@@ -103,7 +104,7 @@ class ContentController extends CmsController
             throw $e;
         }
     }
-
+*/
 
     protected static function buildSections(ActiveQuery $itemsQuery)
     {

@@ -1,4 +1,3 @@
 {
-  "home": "content/index",
-  "article" : "content/article"
+  "generic" : "/content/"
 }
