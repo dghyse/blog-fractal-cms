@@ -14,6 +14,8 @@ use fractalCms\helpers\Cms;
 use fractalCms\models\ConfigItem;
 use fractalCms\models\ConfigType;
 use fractalCms\models\Content;
+use fractalCms\models\ContentItem;
+use fractalCms\models\Item;
 use fractalCms\models\Parameter;
 use fractalCms\models\Seo;
 use fractalCms\models\Slug;
@@ -28,18 +30,17 @@ class BlogController extends Controller
 {
 
     protected $dataPath = '@data/blog';
-
+    protected static $configJsonPath = '@data/blog/configuration.json';
     protected static $params = [
-        'configItems' => '@data/blog/itemConfigs.json',
-        'configTypes' => '@data/blog/typeConfigs.json',
-        'configuration' => '@data/blog/configuration.json',
+        'configJsonItems' => '@data/blog/itemConfigs.json',
+        'configJsonTypes' => '@data/blog/typeConfigs.json',
     ];
-    protected $configItems = [];
-    protected $configTypes = [];
-    protected $configuration = [];
+    protected $configJsonItems = [];
+    protected $configJsonTypes = [];
+    protected $configurationJson = [];
 
     protected $configType;
-    protected $configItem;
+    protected $configsItem = [];
     protected $parameter;
 
     public function init()
@@ -48,11 +49,18 @@ class BlogController extends Controller
             parent::init();
             foreach (static::$params as $attribut => $alias) {
                 $path = Yii::getAlias($alias);
+                Console::stdout('INIT JSON OK !!!! : '.$attribut."\n");
                 if (file_exists($path) === true && $this->hasProperty($attribut) === true) {
                     $json = file_get_contents($path);
                     $this->{$attribut} = Json::decode($json);
                 }
             }
+            $configPath = Yii::getAlias(self::$configJsonPath);
+            if (file_exists($configPath) === true) {
+                $json = file_get_contents($configPath);
+                $this->configurationJson = Json::decode($json);
+            }
+
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;
@@ -63,13 +71,16 @@ class BlogController extends Controller
     public function actionCreate()
     {
         try {
-            foreach ($this->configTypes as $name => $config) {
+            foreach ($this->configJsonTypes as $name => $config) {
                 $this->addConfigType($name, $config);
             }
-            foreach ($this->configItems as $name => $config) {
+            foreach ($this->configJsonItems as $name => $config) {
                 $this->addItemConfigType($name, $config);
             }
-            $this->addContents($this->configuration);
+            $newConfigurationJson = $this->addContents($this->configurationJson);
+            $configPath = Yii::getAlias(self::$configJsonPath);
+            file_put_contents($configPath, Json::encode($newConfigurationJson), JSON_PRETTY_PRINT);
+
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;
@@ -117,9 +128,9 @@ class BlogController extends Controller
             $success = false;
             if ($configItem->validate() === true) {
                 $success = $configItem->save();
-                $this->configItem = $configItem;
+                $this->configsItem[$name] = $configItem;
             }else {
-                $this->configItem = null;
+                $this->configsItem[$name] = null;
             }
             return $success;
         } catch (Exception $e) {
@@ -154,9 +165,10 @@ class BlogController extends Controller
         }
     }
 
-    protected function addContents($configuration) : void
+    protected function addContents($configuration) : array
     {
         try {
+            $newConfig = [];
             foreach ($configuration as $contentJson) {
                 $content = Content::find()->andWhere(['pathKey' => $contentJson['pathKey']])->one();
                 if ($content === null) {
@@ -227,23 +239,59 @@ class BlogController extends Controller
                 } else {
                     Console::stdout('CREATE SEO KO !!!! : '.Json::encode($seo->errors, JSON_PRETTY_PRINT)."\n");
                 }
+                $items = $contentJson['items'];
                 if ($content->validate() === true) {
                     $content->save();
+                    $newItems = [];
+                    foreach ($items as $item) {
+                        Console::stdout(' --- ADD ITEM ---  '."\n");
+                        list($content, $newItem) = $this->addItems($content, $item);
+                        $newItems[] = $newItem;
+                    }
+                    $content->manageItems(false);
+                    $contentJson['items'] = $newItems;
                     Console::stdout('CREATE CONTENT OK !!!! : '.$content->id.' : '.$content->name."\n");
                 } else {
                     Console::stdout('CREATE CONTENT KO !!!! : '.Json::encode($content->errors, JSON_PRETTY_PRINT)."\n");
                 }
+                $newConfig[] = $contentJson;
             }
+            return $newConfig;
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;
         }
     }
 
-    protected function addItems() : int
+    protected function addItems(Content $content, array $item) : array
     {
         try {
-
+            $tempItem = $item;
+            $name = $tempItem['name'];
+            unset($tempItem['name']);
+            if (isset($this->configsItem[$name]) === true && $this->configsItem[$name] instanceof ConfigItem) {
+                $configItem = $this->configsItem[$name];
+                $itemDbId = ($tempItem['id']) ?? null;
+                $itemDb = Item::findOne($itemDbId);
+                if ($itemDb === null) {
+                    $itemDb = Yii::createObject(Item::class);
+                    $itemDb->scenario = Item::SCENARIO_CREATE;
+                    $itemDb->configItemId = $configItem->id;
+                    if ($itemDb->validate() === true) {
+                        $itemDb->save();
+                        $content->attachItem($itemDb);
+                        Console::stdout(' -- CREATE ITEM OK : '.$name."\n");
+                    } else {
+                        Console::stdout(' -- CREATE ITEM KO !!!! : '.Json::encode($itemDb->errors, JSON_PRETTY_PRINT)."\n");
+                    }
+                }
+                $content->items[$itemDb->id] = $tempItem;
+                $item['id'] = $itemDb->id;
+            }
+            return [
+                $content,
+                $item
+            ];
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;

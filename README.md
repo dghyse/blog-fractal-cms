@@ -32,6 +32,11 @@ npm run dist-clean
 ```
 ## Init CMS
 
+### Run migration
+
+``
+php yii.php migrate
+``
 ### Create Rbac
 
 ``
