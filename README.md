@@ -32,6 +32,24 @@ npm run dist-clean
 ```
 ## Init CMS
 
+## Config application
+
+### Add module fractal-cms in config file
+
+```php 
+    'bootstrap' => [
+        'fractal-cms',
+        //../..
+    ],
+    'modules' => [
+        'fractal-cms' => [
+            'class' => FractalCmsModule::class
+        ],
+        //../..
+    ],
+```
+
+
 ### Run migration
 
 ``
@@ -55,25 +73,8 @@ php yii.php fractalCms:init/index
 ### Create Blog
 
 ``
-php yii.php blog/create
+php yii.php blog/build-cms-site
 ``
-
-## Config application
-
-### Add module fractal-cms in config file
-
-```php 
-    'bootstrap' => [
-        'fractal-cms',
-        //../..
-    ],
-    'modules' => [
-        'fractal-cms' => [
-            'class' => FractalCmsModule::class
-        ],
-        //../..
-    ],
-```
 
 
 

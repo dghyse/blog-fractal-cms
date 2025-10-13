@@ -10,12 +10,12 @@
  */
 namespace console\controllers;
 
-use fractalCms\helpers\Cms;
 use fractalCms\models\ConfigItem;
 use fractalCms\models\ConfigType;
 use fractalCms\models\Content;
-use fractalCms\models\ContentItem;
 use fractalCms\models\Item;
+use fractalCms\models\Menu;
+use fractalCms\models\MenuItem;
 use fractalCms\models\Parameter;
 use fractalCms\models\Seo;
 use fractalCms\models\Slug;
@@ -68,7 +68,7 @@ class BlogController extends Controller
 
     }
 
-    public function actionCreate()
+    public function actionBuildCmsSite()
     {
         try {
             foreach ($this->configJsonTypes as $name => $config) {
@@ -79,8 +79,9 @@ class BlogController extends Controller
             }
             $newConfigurationJson = $this->addContents($this->configurationJson);
             $configPath = Yii::getAlias(self::$configJsonPath);
-            file_put_contents($configPath, Json::encode($newConfigurationJson), JSON_PRETTY_PRINT);
-
+            $this->configurationJson = $newConfigurationJson;
+            file_put_contents($configPath, Json::encode($newConfigurationJson, JSON_PRETTY_PRINT));
+            $this->addMenu($newConfigurationJson);
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;
@@ -128,6 +129,8 @@ class BlogController extends Controller
             $success = false;
             if ($configItem->validate() === true) {
                 $success = $configItem->save();
+                $success = $this->addParameter('ITEM', $name, $configItem->id);
+
                 $this->configsItem[$name] = $configItem;
             }else {
                 $this->configsItem[$name] = null;
@@ -142,6 +145,7 @@ class BlogController extends Controller
     protected function addParameter($main, $name, $value)
     {
         try {
+            $name = strtoupper(str_replace('-', '_', $name));
             $parameter = Parameter::find()->andWhere(['group' => $main, 'name' => $name])->one();
             if ($parameter === null) {
                 $parameter = Yii::createObject(Parameter::class);
@@ -151,11 +155,14 @@ class BlogController extends Controller
             } else {
                 $parameter->scenario = Parameter::SCENARIO_UPDATE;
             }
+            $parameter->value = (string)$value;
             $success = true;
             if ($parameter->validate() === true) {
                 $success = $parameter->save();
+                Console::stdout(' --- CREATE PARAMETRE OK : '.$main.' - '.$name."\n");
                 $this->parameter = $parameter;
             } else {
+                Console::stdout(' --- CREATE PARAMETRE KO : '.Json::encode($parameter->errors, JSON_PRETTY_PRINT)."\n");
                 $this->parameter = null;
             }
             return $success;
@@ -242,6 +249,7 @@ class BlogController extends Controller
                 $items = $contentJson['items'];
                 if ($content->validate() === true) {
                     $content->save();
+
                     $newItems = [];
                     foreach ($items as $item) {
                         Console::stdout(' --- ADD ITEM ---  '."\n");
@@ -250,6 +258,7 @@ class BlogController extends Controller
                     }
                     $content->manageItems(false);
                     $contentJson['items'] = $newItems;
+                    $contentJson['contentId'] = $content->id;
                     Console::stdout('CREATE CONTENT OK !!!! : '.$content->id.' : '.$content->name."\n");
                 } else {
                     Console::stdout('CREATE CONTENT KO !!!! : '.Json::encode($content->errors, JSON_PRETTY_PRINT)."\n");
@@ -267,11 +276,14 @@ class BlogController extends Controller
     {
         try {
             $tempItem = $item;
+            // Remove name
             $name = $tempItem['name'];
             unset($tempItem['name']);
             if (isset($this->configsItem[$name]) === true && $this->configsItem[$name] instanceof ConfigItem) {
                 $configItem = $this->configsItem[$name];
                 $itemDbId = ($tempItem['id']) ?? null;
+                //Remove id
+                unset($tempItem['id']);
                 $itemDb = Item::findOne($itemDbId);
                 if ($itemDb === null) {
                     $itemDb = Yii::createObject(Item::class);
@@ -298,20 +310,66 @@ class BlogController extends Controller
         }
     }
 
-    protected function addMenu() : int
+    protected function addMenu($configuration) : bool
     {
         try {
-
+            $success = true;
+            $menuNames = [
+                'header',
+                'footer'
+            ];
+            foreach ($menuNames as $menuName) {
+                $menu = Menu::find()->andWhere(['name' => $menuName])->one();
+                if ($menu === null) {
+                    $menu = Yii::createObject(Menu::class);
+                    $menu->scenario = Menu::SCENARIO_CREATE;
+                    $menu->name = $menuName;
+                    $menu->active = 1;
+                }
+                if ($menu->validate() === true) {
+                    $menu->save();
+                    $menu->refresh();
+                    Console::stdout(' ---- CREATE MENU OK : '.$menuName."\n");
+                    foreach ($configuration as $index => $content) {
+                        $this->addMenuItem($menu, $content['contentId'], $content['name'], $index);
+                    }
+                } else {
+                    $success = false;
+                    Console::stdout(' ---- CREATE MENU KO : '.Json::encode($menu->errors, JSON_PRETTY_PRINT)."\n");
+                }
+            }
+            return $success;
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;
         }
     }
 
-    protected function addMenuItem() : int
+    protected function addMenuItem(Menu $menu, $contentId, $name, $index) : bool
     {
         try {
-
+            $success = true;
+            $pathKey = $menu->id.'.'.($index + 1);
+            $menuItem = MenuItem::find()->andWhere(['pathKey' => $pathKey])->one();
+            if ($menuItem === null) {
+                $menuItem = Yii::createObject(MenuItem::class);
+                $menuItem->scenario = MenuItem::SCENARIO_CREATE;
+                $menuItem->menuId = $menu->id;
+                $menuItem->pathKey = $pathKey;
+            } else {
+                $menuItem->scenario = MenuItem::SCENARIO_UPDATE;
+            }
+            $menuItem->contentId = $contentId;
+            $menuItem->name = ucfirst($name);
+            $menuItem->order = $index + 1;
+            if ($menuItem->validate() === true) {
+                $menuItem->save();
+                Console::stdout(' ---- CREATE MENU ITEM OK : '.$name.' Path KEY : '.$pathKey."\n");
+            } else {
+                $success = false;
+                Console::stdout(' ---- CREATE MENU ITEM KO : '.Json::encode($menuItem->errors, JSON_PRETTY_PRINT)."\n");
+            }
+            return  $success;
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;

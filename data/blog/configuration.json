@@ -1,136 +1,150 @@
 [
-  {
-    "name": "home",
-    "configType": "generic",
-    "model": "section",
-    "pathKey": "1",
-    "parentPathKey": null,
-    "slug": {
-        "path": "accueil"
+    {
+        "name": "accueil",
+        "configType": "generic",
+        "model": "section",
+        "pathKey": "1",
+        "parentPathKey": null,
+        "slug": {
+            "path": "accueil"
+        },
+        "seo": {
+            "title": "Blog : accueil",
+            "description": "Mon blog, vitrine me permettant de montrer qui je suis, ce que j'ai d\u00e9j\u00e0 r\u00e9alis\u00e9 et vers o\u00f9 je veux aller",
+            "imgPath": "@data\/blog\/images\/blog_banner_1200x350.webp",
+            "active": 1,
+            "priority": 1,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 1
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Mon blog page accueil",
+                "subtitle": null,
+                "description": "Mon blog, vitrine me permettant de montrer qui je suis, ce que j'ai d\u00e9j\u00e0 r\u00e9alis\u00e9 et vers o\u00f9 je veux aller",
+                "banner": "@data\/blog\/images\/blog_banner_1200x350.webp",
+                "alt": "Banni\u00e8re accueil",
+                "id": 1
+            },
+            {
+                "name": "titre",
+                "title": "Ma premi\u00e8re r\u00e9alisation",
+                "icon": null,
+                "id": 2
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Ma premi\u00e8re r\u00e9alisation a \u00e9t\u00e9 tr\u00e8s formatrice, elle m'a permit de m'initier \u00e0 des concepts dont je n'avais jamais entendu parl\u00e9.<\/p>",
+                "image": "@data\/blog\/images\/blog_article_300x300.webp",
+                "choix": "left",
+                "id": 3
+            },
+            {
+                "name": "titre",
+                "title": "Ma deuxi\u00e8me r\u00e9alisation",
+                "icon": null,
+                "id": 4
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Ma deuxi\u00e8me r\u00e9alisation a fortement consolid\u00e9 mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.<\/p>",
+                "image": "@data\/blog\/images\/blog_article_300x300.webp",
+                "choix": "right",
+                "id": 5
+            }
+        ],
+        "contentId": 1
     },
-    "seo": {
-      "title": "Blog : accueil",
-      "description": "Mon blog, vitrine me permettant de montrer qui je suis, ce que j'ai déjà réalisé et vers où je veux aller",
-      "imgPath": "@data/blog/images/blog_banner_1200x350.webp",
-      "active": 1,
-      "priority": 1,
-      "ogMeta" : 1,
-      "twitterMeta" : 1,
-      "addJsonLd" : 1
+    {
+        "name": "article 1",
+        "configType": "generic",
+        "model": "article",
+        "pathKey": "1.1",
+        "parentPathKey": "1",
+        "slug": {
+            "path": "article-1"
+        },
+        "seo": {
+            "title": "Blog : ma premi\u00e8re r\u00e9alisation",
+            "description": "Ma premi\u00e8re r\u00e9alisation a \u00e9t\u00e9 tr\u00e8s formatrice, elle m'a permit de m'initier \u00e0 des concepts dont je n'avais jamais entendu parl\u00e9.",
+            "imgPath": "@data\/blog\/images\/article_blog_1200x500.webp",
+            "active": 1,
+            "priority": 0.5,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 1
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Ma premi\u00e8re r\u00e9alisation",
+                "subtitle": null,
+                "description": "Ma premi\u00e8re r\u00e9alisation a \u00e9t\u00e9 tr\u00e8s formatrice, elle m'a permit de m'initier \u00e0 des concepts dont je n'avais jamais entendu parl\u00e9.",
+                "banner": "@data\/blog\/images\/article_blog_1200x500.webp",
+                "alt": "Banni\u00e8re article 1",
+                "id": 6
+            },
+            {
+                "name": "titre",
+                "title": "Ma premi\u00e8re r\u00e9alisation",
+                "icon": null,
+                "id": 7
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Ma premi\u00e8re r\u00e9alisation a \u00e9t\u00e9 tr\u00e8s formatrice, elle m'a permit de m'initier \u00e0 des concepts dont je n'avais jamais entendu parl\u00e9.<\/p>",
+                "image": null,
+                "choix": null,
+                "id": 8
+            }
+        ],
+        "contentId": 2
     },
-    "items": [
-      {
-        "type": "entete",
-        "title": "Mon blog page accueil",
-        "subtitle" : null,
-        "description": "Mon blog, vitrine me permettant de montrer qui je suis, ce que j'ai déjà réalisé et vers où je veux aller",
-        "banner": "@data/blog/images/blog_banner_1200x350.webp",
-        "alt" : "Bannière accueil"
-      },
-      {
-        "type": "titre",
-        "title": "Ma première réalisation",
-        "icon": null
-      },
-      {
-        "type": "image-html",
-        "html": "<p>Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.</p>",
-        "image": "@data/blog/images/blog_article_300x300.webp",
-        "choix": "left"
-      },
-      {
-        "type": "titre",
-        "title": "Ma deuxième réalisation",
-        "icon": null
-      },
-      {
-        "type": "image-html",
-        "html": "<p>Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.</p>",
-        "image": "@data/blog/images/blog_article_300x300.webp",
-        "choix": "right"
-      }
-    ]
-  },
-  {
-    "name": "article 1",
-    "configType": "generic",
-    "model": "article",
-    "pathKey": "1.1",
-    "parentPathKey": "1",
-    "slug": {
-      "path": "article-1"
-    },
-    "seo": {
-      "title": "Blog : ma première réalisation",
-      "description": "Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.",
-      "imgPath": "@data/blog/images/article_blog_1200x500.webp",
-      "active": 1,
-      "priority": 0.5,
-      "ogMeta" : 1,
-      "twitterMeta" : 1,
-      "addJsonLd" : 1
-    },
-    "items": [
-      {
-        "type": "entete",
-        "title": "Ma première réalisation",
-        "subtitle" : null,
-        "description": "Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.",
-        "banner": "@data/blog/images/article_blog_1200x500.webp",
-        "alt" : "Bannière article 1"
-      },
-      {
-        "type": "titre",
-        "title": "Ma première réalisation",
-        "icon": null
-      },
-      {
-        "type": "image-html",
-        "html": "<p>Ma première réalisation a été très formatrice, elle m'a permit de m'initier à des concepts dont je n'avais jamais entendu parlé.</p>",
-        "image": null,
-        "choix": null
-      }
-    ]
-  },
-  {
-    "name": "article 2",
-    "configType": "generic",
-    "model": "article",
-    "pathKey": "1.2",
-    "parentPathKey": "1",
-    "slug": {
-      "path": "article-2"
-    },
-    "seo": {
-      "title": "Blog : ma deuxième réalisation",
-      "description": "Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.",
-      "imgPath": "@data/blog/images/article_blog_1200x500.webp",
-      "priority": 0.5,
-      "active": 1,
-      "ogMeta" : 1,
-      "twitterMeta" : 1,
-      "addJsonLd" : 1
-    },
-    "items": [
-      {
-        "type": "entete",
-        "title": "Ma deuxième réalisation",
-        "subtitle" : null,
-        "description": "Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.",
-        "banner": "@data/blog/images/article_blog_1200x500.webp",
-        "alt" : "Bannière article 2"
-      },
-      {
-        "type": "titre",
-        "title": "Ma deuxième réalisation",
-        "icon": null
-      },
-      {
-        "type": "image-html",
-        "html": "<p>Ma deuxième réalisation a fortement consolidé mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.</p>",
-        "image": null,
-        "choix": null
-      }
-    ]
-  }
+    {
+        "name": "article 2",
+        "configType": "generic",
+        "model": "article",
+        "pathKey": "1.2",
+        "parentPathKey": "1",
+        "slug": {
+            "path": "article-2"
+        },
+        "seo": {
+            "title": "Blog : ma deuxi\u00e8me r\u00e9alisation",
+            "description": "Ma deuxi\u00e8me r\u00e9alisation a fortement consolid\u00e9 mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.",
+            "imgPath": "@data\/blog\/images\/article_blog_1200x500.webp",
+            "priority": 0.5,
+            "active": 1,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 1
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Ma deuxi\u00e8me r\u00e9alisation",
+                "subtitle": null,
+                "description": "Ma deuxi\u00e8me r\u00e9alisation a fortement consolid\u00e9 mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.",
+                "banner": "@data\/blog\/images\/article_blog_1200x500.webp",
+                "alt": "Banni\u00e8re article 2",
+                "id": 9
+            },
+            {
+                "name": "titre",
+                "title": "Ma deuxi\u00e8me r\u00e9alisation",
+                "icon": null,
+                "id": 10
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Ma deuxi\u00e8me r\u00e9alisation a fortement consolid\u00e9 mes acquis, j'ai peu approfondir mes connaissances, et surtout m'amuser.<\/p>",
+                "image": null,
+                "choix": null,
+                "id": 11
+            }
+        ],
+        "contentId": 3
+    }
 ]
