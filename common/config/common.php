@@ -50,6 +50,9 @@ $config = [
                 'enableSchemaCache' => getboolenv('DB_SCHEMA_CACHE'),
                 'schemaCacheDuration' => getintenv('DB_SCHEMA_CACHE_DURATION'),
             ],
+            \webapp\helpers\MenuBuilder::class => [
+                'class' => \webapp\helpers\MenuBuilder::class
+            ],
         ]
     ],
     'bootstrap' => [

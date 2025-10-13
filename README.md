@@ -50,7 +50,7 @@ npm run dist-clean
 ```
 
 
-### Run migration
+### Run migration (à exécuter dans l'ordre)
 
 ``
 php yii.php migrate

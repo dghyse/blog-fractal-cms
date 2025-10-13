@@ -52,22 +52,15 @@ class ContentController extends CmsController
             Yii::debug('Trace :'.__METHOD__, __METHOD__);
             $content = $this->getContent();
             $itemEntete = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'ENTETE')])->one();
-            $itemHeader = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'HEADER')])->one();
-            $itemFooter = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'FOOTER')])->one();
             $itemsQuery = $content->getItems()->andWhere([
                 'not', ['configItemId' => [
                     Cms::getParameter('ITEM', 'ENTETE'),
-                    Cms::getParameter('ITEM', 'HEADER'),
-                    Cms::getParameter('ITEM', 'FOOTER'),
                     ]]]);
-            $sections = static::buildSections($itemsQuery);
             return $this->render('index',
                 [
                     'content' => $content,
                     'entete' => $itemEntete,
-                    'header' => $itemHeader,
-                    'footer' => $itemFooter,
-                    'sections' => $sections
+                    'itemsQuery' => $itemsQuery
                     ]);
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
@@ -114,7 +107,7 @@ class ContentController extends CmsController
             $section = null;
             /** @var Item $item */
             foreach ($itemsQuery->each() as $item) {
-                if ($item->configItemId == Cms::getParameter('ITEM', 'TITLE')) {
+                if ($item->configItemId == Cms::getParameter('ITEM', 'TITRE')) {
                     if ($section !== null) {
                         $sections[] = $section;
                     }
@@ -122,8 +115,6 @@ class ContentController extends CmsController
                         'title' => $item,
                         'items' => []
                     ];
-                } elseif ($item->configItemId == Cms::getParameter('ITEM', 'LINK_SIMPLE')) {
-                    $section['link'] = $item;
                 } else {
                     if (is_array($section['items']) === false) {
                         $section['items'] = [];
@@ -131,8 +122,6 @@ class ContentController extends CmsController
 
                     if ($item->configItemId == Cms::getParameter('ITEM', 'CARD_ARTICLE')) {
                         $section['type'] = Content::TYPE_ARTICLE;
-                    } elseif ($item->configItemId == Cms::getParameter('ITEM', 'SKILLS')) {
-                        $section['type'] = 'skills';
                     }
                     $section['items'][] = $item;
                 }

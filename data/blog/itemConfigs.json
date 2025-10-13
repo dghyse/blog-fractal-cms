@@ -41,7 +41,7 @@
     },
     "image": {
       "type": "file",
-      "title": "image en 600x400",
+      "title": "image en 300x300",
       "accept": "png, jpeg, jpg"
     },
     "choix": {
@@ -57,6 +57,27 @@
           "value": "left"
         }
       ]
+    }
+  },
+  "card-article": {
+    "title": {
+      "type": "string",
+      "title": "Titre"
+    },
+    "target": {
+      "type": "listcms",
+      "title": "Cible de la carte",
+      "description": "Choisir un article"
+    },
+    "url": {
+      "type": "string",
+      "title": "Lien externe",
+      "description": "Indiquer une url vers laquelle rediriger l'internaute"
+    },
+    "description": {
+      "type": "wysiwyg",
+      "title": "description",
+      "description": "Texte affiché dans la carte"
     }
   }
 }

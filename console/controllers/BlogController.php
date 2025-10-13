@@ -19,6 +19,7 @@ use fractalCms\models\MenuItem;
 use fractalCms\models\Parameter;
 use fractalCms\models\Seo;
 use fractalCms\models\Slug;
+use fractalCms\models\User;
 use fractalCms\Module;
 use yii\console\Controller;
 use Exception;
@@ -41,7 +42,7 @@ class BlogController extends Controller
 
     protected $configType;
     protected $configsItem = [];
-    protected $parameter;
+    protected $articleRoutes = [];
 
     public function init()
     {
@@ -77,6 +78,9 @@ class BlogController extends Controller
             foreach ($this->configJsonItems as $name => $config) {
                 $this->addItemConfigType($name, $config);
             }
+            //Add site name Parametre
+            $sucess = $this->addParameter('SITE', 'NAME', 'Blog FractalCMS');
+
             $newConfigurationJson = $this->addContents($this->configurationJson);
             $configPath = Yii::getAlias(self::$configJsonPath);
             $this->configurationJson = $newConfigurationJson;
@@ -130,7 +134,6 @@ class BlogController extends Controller
             if ($configItem->validate() === true) {
                 $success = $configItem->save();
                 $success = $this->addParameter('ITEM', $name, $configItem->id);
-
                 $this->configsItem[$name] = $configItem;
             }else {
                 $this->configsItem[$name] = null;
@@ -160,10 +163,8 @@ class BlogController extends Controller
             if ($parameter->validate() === true) {
                 $success = $parameter->save();
                 Console::stdout(' --- CREATE PARAMETRE OK : '.$main.' - '.$name."\n");
-                $this->parameter = $parameter;
             } else {
                 Console::stdout(' --- CREATE PARAMETRE KO : '.Json::encode($parameter->errors, JSON_PRETTY_PRINT)."\n");
-                $this->parameter = null;
             }
             return $success;
         } catch (Exception $e) {
@@ -251,14 +252,16 @@ class BlogController extends Controller
                     $content->save();
 
                     $newItems = [];
+                    $indexItem = 0;
                     foreach ($items as $item) {
                         Console::stdout(' --- ADD ITEM ---  '."\n");
-                        list($content, $newItem) = $this->addItems($content, $item);
+                        list($content, $newItem) = $this->addItems($content, $item, $indexItem);
                         $newItems[] = $newItem;
                     }
                     $content->manageItems(false);
                     $contentJson['items'] = $newItems;
                     $contentJson['contentId'] = $content->id;
+                    $this->articleRoutes[] = $content->getRoute();
                     Console::stdout('CREATE CONTENT OK !!!! : '.$content->id.' : '.$content->name."\n");
                 } else {
                     Console::stdout('CREATE CONTENT KO !!!! : '.Json::encode($content->errors, JSON_PRETTY_PRINT)."\n");
@@ -272,7 +275,7 @@ class BlogController extends Controller
         }
     }
 
-    protected function addItems(Content $content, array $item) : array
+    protected function addItems(Content $content, array $item, &$index) : array
     {
         try {
             $tempItem = $item;
@@ -284,6 +287,13 @@ class BlogController extends Controller
                 $itemDbId = ($tempItem['id']) ?? null;
                 //Remove id
                 unset($tempItem['id']);
+                if ($name === 'card-article'
+                    && isset($this->articleRoutes[$index]) === true
+                    && empty($item['target']) === true) {
+                    $tempItem['target'] = $this->articleRoutes[$index];
+                    $item['target'] = $this->articleRoutes[$index];
+                    $index += 1;
+                }
                 $itemDb = Item::findOne($itemDbId);
                 if ($itemDb === null) {
                     $itemDb = Yii::createObject(Item::class);

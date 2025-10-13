@@ -36,7 +36,7 @@ $class = 'wrapper';
         <?php echo Html::tag('meta', '', ['name' => 'X-Version', 'content' => Yii::$app->version]); ?>
         <?php $this->head(); ?>
     </head>
-<?php echo Html::beginTag('body', ['class' => 'bg-gray-50 text-gray-900 font-sans']); ?>
+<?php echo Html::beginTag('body', ['class' => 'bg-gray-900 text-gray-100 font-sans']); ?>
 <?php $this->beginBody(); ?>
     <?php
     echo $content;

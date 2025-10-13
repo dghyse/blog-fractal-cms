@@ -10,9 +10,7 @@
  * @var $this yii\web\View
  * @var $content \fractalCms\models\Content
  * @var $entete \fractalCms\models\Item
- * @var $header \fractalCms\models\Item
- * @var $footer \fractalCms\models\Item
- * @var $sections array
+ * @var $itemsQuery \yii\db\ActiveQuery
  *
  */
 use fractalCms\helpers\Html;
@@ -24,74 +22,50 @@ $title = ($entete instanceof \fractalCms\models\Item) ? $entete->title : $conten
 $subtitle = ($entete instanceof \fractalCms\models\Item) ? $entete->subtitle : null;
 $banner = ($entete instanceof \fractalCms\models\Item) ? $entete->banner : null;
 $description = ($entete instanceof \fractalCms\models\Item) ? $entete->description : null;
-$ctatitle = ($entete instanceof \fractalCms\models\Item) ? $entete->ctatitle : null;
-$target = ($entete instanceof \fractalCms\models\Item) ? $entete->target : null;
 $this->title = trim(($content?->seo?->title) ?? $title);
 
 ?>
 <?php
-echo Header::widget(['item' => $header]);
+echo Header::widget([]);
 ?>
-<main id="main" role="main"  tabindex="-1" portfolio-focus="main">
+<main id="main" class="max-w-6xl mx-auto py-10 px-4 space-y-12" role="main"  tabindex="-1" portfolio-focus="main">
     <?php
-    echo Breadcrumb::widget(['content' => $content]);
+    //echo Breadcrumb::widget(['content' => $content]);
     ?>
-    <!-- Hero avec image -->
-    <section id="home" class="relative text-white">
-        <!-- Image de fond -->
-        <div class="absolute inset-0 h-72">
-            <?php
-            if (empty($banner) === false) {
-                echo Html::img($banner, [
-                    'width' => 1200, 'height' => 300,
-                    'alt' => 'Image hero',
-                    'class' => 'w-full h-full object-cover'
-                ]);
-            }
-            ?>
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-blue-800 opacity-70"></div>
-        </div>
-
-        <!-- Contenu -->
-        <div class="relative container mx-auto px-6 h-72 flex flex-col justify-center items-center text-center">
-            <h1 class="text-3xl md:text-5xl font-extrabold"><?php echo $title;?></h1>
-            <div class="mt-2 text-lg text-blue-100">
+    <?php
+    $option['class'] = 'relative w-full h-[300px] bg-cover bg-center flex items-center justify-center';
+    if ($banner !== null) {
+        $option['style'] = 'background-image: url(\''.Html::getImgCache($banner, ['width' => 1200, 'height' => 300]).'\')';
+    }
+        echo Html::beginTag('section', $option);
+    ?>
+        <div class="bg-black/50 p-6 rounded-lg text-center max-w-3xl">
+            <h1 class="text-4xl font-extrabold"><?php echo $title;?></h1>
+            <?php if (empty($subtitle) === false):?>
+            <p class="text-lg text-gray-300 mt-2"><?php echo $subtitle;?></p>
+            <?php endif;?>
+            <div class="text-sm text-gray-400 mt-3">
                 <?php echo $description;?>
             </div>
-            <div class="mt-4 flex gap-4">
-                <?php
-                if (empty($ctatitle) === false && empty($target) === false) {
-                    echo Html::a(
-                        $ctatitle,
-                        \yii\helpers\Url::toRoute($target),
-                        [
-                            'class' => 'bg-white text-blue-700 font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-100 transition'
-                        ]
-                    );
-                }
-                ?>
-            </div>
         </div>
-    </section>
-
-
+    <?php echo Html::endTag('section');?>
+    <!-- Hero avec image -->
 
     <?php
-    foreach ($sections as $index => $section) {
-        echo \webapp\widgets\Section::widget(
+    foreach ($itemsQuery->each() as $item) {
+        echo \webapp\widgets\Item::widget(
             [
-                'section' => $section,
+                'item' => $item,
                 'element' => $content,
-                'index' => $index
             ]
         );
     }
+
     ?>
 
 </main>
 <?php
-echo Footer::widget(['item' => $footer]);
+echo Footer::widget([]);
 ?>
 
 

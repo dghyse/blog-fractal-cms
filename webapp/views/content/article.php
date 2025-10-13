@@ -28,11 +28,11 @@ $this->title = trim(($content?->seo?->title) ?? $title);
 
 ?>
 <?php
-echo Header::widget(['item' => $header]);
+//echo Header::widget(['item' => $header]);
 ?>
 <main id="main" role="main" tabindex="-1" portfolio-focus="main">
     <?php
-        echo Breadcrumb::widget(['content' => $content]);
+       // echo Breadcrumb::widget(['content' => $content]);
     ?>
     <!-- Hero avec image -->
     <section id="home" class="relative text-white">
@@ -57,19 +57,6 @@ echo Header::widget(['item' => $header]);
             <div class="mt-2 text-lg text-blue-100">
                 <?php echo $description;?>
             </div>
-            <div class="mt-4 flex gap-4">
-                <?php
-                if (empty($ctatitle) === false && empty($target) === false) {
-                    echo Html::a(
-                        $ctatitle,
-                        \yii\helpers\Url::toRoute($target),
-                        [
-                            'class' => 'bg-white text-blue-700 font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-100 transition'
-                        ]
-                    );
-                }
-                ?>
-            </div>
         </div>
     </section>
 
@@ -89,7 +76,7 @@ echo Header::widget(['item' => $header]);
 
 </main>
 <?php
-echo Footer::widget(['item' => $footer]);
+//echo Footer::widget(['item' => $footer]);
 ?>
 
 
