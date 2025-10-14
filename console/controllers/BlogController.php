@@ -32,6 +32,7 @@ class BlogController extends Controller
 
     protected $dataPath = '@data/blog';
     protected static $configJsonPath = '@data/blog/configuration.json';
+    protected static $configJsonPathBuilded = '@data/blog/configuration_builded.json';
     protected static $params = [
         'configJsonItems' => '@data/blog/itemConfigs.json',
         'configJsonTypes' => '@data/blog/typeConfigs.json',
@@ -44,6 +45,9 @@ class BlogController extends Controller
     protected $configsItem = [];
     protected $articleRoutes = [];
 
+    /**
+     * @inheritDoc
+     */
     public function init()
     {
         try {
@@ -56,7 +60,10 @@ class BlogController extends Controller
                     $this->{$attribut} = Json::decode($json);
                 }
             }
-            $configPath = Yii::getAlias(self::$configJsonPath);
+            $configPath = Yii::getAlias(self::$configJsonPathBuilded);
+            if (file_exists($configPath) === false) {
+                $configPath = Yii::getAlias(self::$configJsonPath);
+            }
             if (file_exists($configPath) === true) {
                 $json = file_get_contents($configPath);
                 $this->configurationJson = Json::decode($json);
@@ -69,6 +76,12 @@ class BlogController extends Controller
 
     }
 
+    /**
+     * Build Cms for Site blog
+     *
+     * @return void
+     * @throws Exception
+     */
     public function actionBuildCmsSite()
     {
         try {
@@ -82,7 +95,7 @@ class BlogController extends Controller
             $sucess = $this->addParameter('SITE', 'NAME', 'Blog FractalCMS');
 
             $newConfigurationJson = $this->addContents($this->configurationJson);
-            $configPath = Yii::getAlias(self::$configJsonPath);
+            $configPath = Yii::getAlias(self::$configJsonPathBuilded);
             $this->configurationJson = $newConfigurationJson;
             file_put_contents($configPath, Json::encode($newConfigurationJson, JSON_PRETTY_PRINT));
             $this->addMenu($newConfigurationJson);
@@ -92,6 +105,15 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Add Content config Type
+     *
+     * @param $name
+     * @param $value
+     * @return bool
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addConfigType($name, $value) : bool
     {
         try {
@@ -118,6 +140,15 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Add Item Config Type
+     *
+     * @param $name
+     * @param $value
+     * @return bool
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addItemConfigType($name, $value) : bool
     {
         try {
@@ -145,6 +176,16 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Add Parameter
+     *
+     * @param $main
+     * @param $name
+     * @param $value
+     * @return bool
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addParameter($main, $name, $value)
     {
         try {
@@ -173,6 +214,14 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Create or Update Content
+     *
+     * @param $configuration
+     * @return array
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addContents($configuration) : array
     {
         try {
@@ -275,6 +324,17 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Add Items og Content
+     *
+     *
+     * @param Content $content
+     * @param array $item
+     * @param $index
+     * @return array
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addItems(Content $content, array $item, &$index) : array
     {
         try {
@@ -287,9 +347,9 @@ class BlogController extends Controller
                 $itemDbId = ($tempItem['id']) ?? null;
                 //Remove id
                 unset($tempItem['id']);
-                if ($name === 'card-article'
+                if ($name === 'image-html'
                     && isset($this->articleRoutes[$index]) === true
-                    && empty($item['target']) === true) {
+                    && empty($item['target']) === false) {
                     $tempItem['target'] = $this->articleRoutes[$index];
                     $item['target'] = $this->articleRoutes[$index];
                     $index += 1;
@@ -320,6 +380,14 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Add Menu
+     *
+     * @param $configuration
+     * @return bool
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addMenu($configuration) : bool
     {
         try {
@@ -343,6 +411,7 @@ class BlogController extends Controller
                     foreach ($configuration as $index => $content) {
                         $this->addMenuItem($menu, $content['contentId'], $content['name'], $index);
                     }
+                    $this->addParameter('MENU', strtoupper($menuName), $menu->id);
                 } else {
                     $success = false;
                     Console::stdout(' ---- CREATE MENU KO : '.Json::encode($menu->errors, JSON_PRETTY_PRINT)."\n");
@@ -355,6 +424,17 @@ class BlogController extends Controller
         }
     }
 
+    /**
+     * Add Menu Item
+     *
+     * @param Menu $menu
+     * @param $contentId
+     * @param $name
+     * @param $index
+     * @return bool
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     protected function addMenuItem(Menu $menu, $contentId, $name, $index) : bool
     {
         try {

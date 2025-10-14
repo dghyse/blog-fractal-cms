@@ -1,16 +1,16 @@
 {
   "manifest": {
-    "js": "js/manifest.866fad70.js"
+    "js": "js/manifest.3a43139b.js"
   },
   "main": {
-    "css": "css/main.36e075d5.css",
-    "js": "js/main.36e075d5.js"
+    "css": "css/main.91815c00.css",
+    "js": "js/main.91815c00.js"
   },
   "app": {
-    "css": "css/app.9e4e7ff9.css",
-    "js": "js/app.9e4e7ff9.js"
+    "css": "css/app.244f4a42.css",
+    "js": "js/app.244f4a42.js"
   },
   "vendors": {
-    "js": "js/vendors.15b0f715.js"
+    "js": "js/vendors.2d653db3.js"
   }
 }

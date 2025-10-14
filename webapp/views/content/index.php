@@ -10,8 +10,7 @@
  * @var $this yii\web\View
  * @var $content \fractalCms\models\Content
  * @var $entete \fractalCms\models\Item
- * @var $itemsQuery \yii\db\ActiveQuery
- *
+ * @var $sections array
  */
 use fractalCms\helpers\Html;
 use webapp\widgets\Header;
@@ -28,9 +27,9 @@ $this->title = trim(($content?->seo?->title) ?? $title);
 <?php
 echo Header::widget([]);
 ?>
-<main id="main" class="max-w-6xl mx-auto py-10 px-4 space-y-12" role="main"  tabindex="-1" portfolio-focus="main">
+<main id="main" class="space-y-16" role="main"  tabindex="-1" portfolio-focus="main">
     <?php
-    //echo Breadcrumb::widget(['content' => $content]);
+    echo Breadcrumb::widget(['content' => $content]);
     ?>
     <?php
     $option['class'] = 'relative w-full h-[300px] bg-cover bg-center flex items-center justify-center';
@@ -42,9 +41,9 @@ echo Header::widget([]);
         <div class="bg-black/50 p-6 rounded-lg text-center max-w-3xl">
             <h1 class="text-4xl font-extrabold"><?php echo $title;?></h1>
             <?php if (empty($subtitle) === false):?>
-            <p class="text-lg text-gray-300 mt-2"><?php echo $subtitle;?></p>
+            <h2 class="text-2xl mt-2"><?php echo $subtitle;?></h2>
             <?php endif;?>
-            <div class="text-sm text-gray-400 mt-3">
+            <div class="text-sm mt-3 text-gray-200">
                 <?php echo $description;?>
             </div>
         </div>
@@ -52,15 +51,15 @@ echo Header::widget([]);
     <!-- Hero avec image -->
 
     <?php
-    foreach ($itemsQuery->each() as $item) {
-        echo \webapp\widgets\Item::widget(
+    foreach ($sections as $index => $section) {
+        echo \webapp\widgets\Section::widget(
             [
-                'item' => $item,
+                'section' => $section,
                 'element' => $content,
+                'index' => $index
             ]
         );
     }
-
     ?>
 
 </main>

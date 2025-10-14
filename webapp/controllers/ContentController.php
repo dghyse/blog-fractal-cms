@@ -56,11 +56,12 @@ class ContentController extends CmsController
                 'not', ['configItemId' => [
                     Cms::getParameter('ITEM', 'ENTETE'),
                     ]]]);
+            $sections = static::buildSections($itemsQuery);
             return $this->render('index',
                 [
                     'content' => $content,
                     'entete' => $itemEntete,
-                    'itemsQuery' => $itemsQuery
+                    'sections' => $sections
                     ]);
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
@@ -68,36 +69,6 @@ class ContentController extends CmsController
         }
     }
 
-    /*
-    public function actionArticle()
-    {
-        try {
-            Yii::debug('Trace :'.__METHOD__, __METHOD__);
-            $content = $this->getContent();
-            $itemEntete = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'ENTETE')])->one();
-            $itemHeader = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'HEADER')])->one();
-            $itemFooter = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'FOOTER')])->one();
-            $itemsQuery = $content->getItems()->andWhere([
-                'not', ['configItemId' => [
-                    Cms::getParameter('ITEM', 'ENTETE'),
-                    Cms::getParameter('ITEM', 'HEADER'),
-                    Cms::getParameter('ITEM', 'FOOTER'),
-                ]]]);
-            $sections = static::buildSections($itemsQuery);
-            return $this->render('article',
-                [
-                    'content' => $content,
-                    'entete' => $itemEntete,
-                    'header' => $itemHeader,
-                    'footer' => $itemFooter,
-                    'sections' => $sections
-                ]);
-        } catch (Exception $e) {
-            Yii::error($e->getMessage(), __METHOD__);
-            throw $e;
-        }
-    }
-*/
 
     protected static function buildSections(ActiveQuery $itemsQuery)
     {
@@ -120,8 +91,11 @@ class ContentController extends CmsController
                         $section['items'] = [];
                     }
 
-                    if ($item->configItemId == Cms::getParameter('ITEM', 'CARD_ARTICLE')) {
-                        $section['type'] = Content::TYPE_ARTICLE;
+                    if ($item->configItemId == Cms::getParameter('ITEM', 'IMAGE_HTML')) {
+
+                        $section['type'] = 'IMAGE_HTML';
+                        $section['hasImg'] = empty($item?->image);
+                        $section['direction'] = $item?->choix;
                     }
                     $section['items'][] = $item;
                 }

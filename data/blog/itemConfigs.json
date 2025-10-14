@@ -37,11 +37,21 @@
   "image-html": {
     "html": {
       "type": "wysiwyg",
-      "title": "Texte au format HTML"
+      "title": "Texte de description au format HTML"
+    },
+    "target": {
+      "type": "listcms",
+      "title": "Option cible du lien \"voir plus\"",
+      "description": "Choisir un article dans le CMS"
+    },
+    "url": {
+      "type": "string",
+      "title": "Option lien externe",
+      "description": "Indiquer une url vers laquelle rediriger l'internaute"
     },
     "image": {
       "type": "file",
-      "title": "image en 300x300",
+      "title": "droite, gauche : image en 300x300px, en haut : 1200x300px",
       "accept": "png, jpeg, jpg"
     },
     "choix": {
@@ -55,29 +65,12 @@
         {
           "name": "Image à gauche",
           "value": "left"
+        },
+        {
+          "name": "Image en haut",
+          "value": "top"
         }
       ]
-    }
-  },
-  "card-article": {
-    "title": {
-      "type": "string",
-      "title": "Titre"
-    },
-    "target": {
-      "type": "listcms",
-      "title": "Cible de la carte",
-      "description": "Choisir un article"
-    },
-    "url": {
-      "type": "string",
-      "title": "Lien externe",
-      "description": "Indiquer une url vers laquelle rediriger l'internaute"
-    },
-    "description": {
-      "type": "wysiwyg",
-      "title": "description",
-      "description": "Texte affiché dans la carte"
     }
   }
 }

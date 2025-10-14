@@ -2,7 +2,7 @@ import {ILogger, resolve} from 'aurelia';
 
 export class PorteFolioApp {
     constructor(
-        private readonly logger: ILogger = resolve(ILogger).scopeTo('PorteFolio'),
+        private readonly logger: ILogger = resolve(ILogger).scopeTo('Blog'),
     ) {
     }
 
