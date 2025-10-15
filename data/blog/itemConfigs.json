@@ -1,0 +1,76 @@
+{
+  "entete" : {
+    "title": {
+      "type": "string",
+      "title": "Titre"
+    },
+    "subtitle": {
+      "type": "string",
+      "title": "Sous-titre"
+    },
+    "description": {
+      "type": "wysiwyg",
+      "title": "Description"
+    },
+    "banner": {
+      "type": "file",
+      "title": "image en 1200x300",
+      "accept": "png, jpeg, jpg"
+    },
+    "alt": {
+      "type": "string",
+      "title": "Alt de la bannière",
+      "description": "Intitulé à ajouter dans l'image de la bannière"
+    }
+  },
+  "titre": {
+    "title": {
+      "type": "string",
+      "title": "Titre"
+    },
+    "icon": {
+      "type": "file",
+      "title": "image en 64x64 (icon placé à droite du titre)",
+      "accept": "png, jpeg, jpg"
+    }
+  },
+  "image-html": {
+    "html": {
+      "type": "wysiwyg",
+      "title": "Texte de description au format HTML"
+    },
+    "target": {
+      "type": "listcms",
+      "title": "Option cible du lien \"voir plus\"",
+      "description": "Choisir un article dans le CMS"
+    },
+    "url": {
+      "type": "string",
+      "title": "Option lien externe",
+      "description": "Indiquer une url vers laquelle rediriger l'internaute"
+    },
+    "image": {
+      "type": "file",
+      "title": "droite, gauche : image en 300x300px, en haut : 1200x300px",
+      "accept": "png, jpeg, jpg"
+    },
+    "choix": {
+      "type": "radio",
+      "title": "Position de l'image",
+      "values": [
+        {
+          "name": "Image à droite",
+          "value": "right"
+        },
+        {
+          "name": "Image à gauche",
+          "value": "left"
+        },
+        {
+          "name": "Image en haut",
+          "value": "top"
+        }
+      ]
+    }
+  }
+}

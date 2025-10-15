@@ -1,0 +1,25 @@
+## Editors - OS
+.idea
+.DS_Store
+Thumbs.db
+*.iml
+## builders
+bower_components
+node_modules
+
+## Environment params
+.env
+
+## Yii directories
+vendor/*
+console/runtime/*
+console/runtime/log/*
+webapp/runtime/*
+webapp/runtime/debug/*
+common/runtime/*
+www/assets/*
+www/data/*
+www/cache/*
+
+## Force files to keep
+!.gitkeep

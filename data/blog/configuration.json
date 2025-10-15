@@ -1,0 +1,270 @@
+[
+    {
+        "name": "Modifier vos articles",
+        "configType": "generic",
+        "model": "article",
+        "pathKey": "1.1",
+        "parentPathKey": "1",
+        "slug": {
+            "path": "modifier-vos-articles"
+        },
+        "seo": {
+            "title": "Modifier vos articles",
+            "description": "Les articles de ce blog sont g\u00e9r\u00e9s directement depuis l\u2019interface d\u2019administration de FractalCMS.",
+            "imgPath": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+            "active": 1,
+            "priority": 0.5,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 0
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Modifier vos articles",
+                "subtitle": null,
+                "description": "Les articles de ce blog sont g\u00e9r\u00e9s directement depuis l\u2019interface d\u2019administration de FractalCMS.",
+                "banner": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+                "alt": "",
+                "id": 1
+            },
+            {
+                "name": "titre",
+                "title": "Connectez-vous \u00e0 l'interface admin",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Saisissez l'identifiant et le mot de passe que vous avez indiqu\u00e9 lors de la cr\u00e9ation de votre utilisateur <strong>Administrateur<\/strong> (README.md commande : <em>php yii.php admin\/create<\/em>) puis <strong>valider.<\/strong><\/p>",
+                "image": "@data\/blog\/images\/login.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Modifier un article existant",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Rendez-vous dans la section <strong>Contenus -> Articles<\/strong><\/p><p>Cliquez sur l'article que vous voulez \u00e9diter.<\/p>",
+                "image": "@data\/blog\/images\/menu_articles.webp",
+                "choix": "right"
+            },
+            {
+                "name": "titre",
+                "title": "Modifier l'url",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Dans la section <strong>Url<\/strong>, modifiez la valeur dans le champ. <strong>Attention<\/strong> cette valeur doit-\u00eatre unique dans le site.<\/p>",
+                "image": "@data\/blog\/images\/article_url.webp",
+                "choix": "right"
+            },
+            {
+                "name": "titre",
+                "title": "Modifier le SEO",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Dans la section <strong>SEO<\/strong>, vous pouvez modifier <\/p><ol><li data-list=\"bullet\"><strong>Titre : <\/strong> Titre de l'onglet du navigateur<\/li><li data-list=\"bullet\"><strong>Description : <\/strong>Valeur pr\u00e9sente dans le &lt;meta name=\"description\"&gt; <\/li><li data-list=\"bullet\"><strong>Image : <\/strong>Valeur pr\u00e9sente dans le &lt;meta name=\"image\"&gt;<\/li><\/ol><p><strong>FractalCMS<\/strong> met \u00e0 disposition un behaviors <em>fractalCms\\behaviors\\SEO.php<\/em>.Vous devez l'ajouter aux behaviors de vos contr\u00f4leurs pour que les &lt;meta&gt;<\/p><p>soient ajout\u00e9es automatiquement.<\/p>",
+                "image": "@data\/blog\/images\/article_seo_titre.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Modifier le SEO : SITEMAP",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Indique les valeurs affich\u00e9es dans le fichier sitemap.xml.<\/p><p>Ces options permettent de personnaliser les propri\u00e9t\u00e9s des tags &lt;url&gt; dans le fichier sitemap.xml.<\/p><p><strong>FractalCMS<\/strong> met \u00e0 disposition l'action <em>fractalCms\\actions\\SitemapAction.php<\/em> qui construit le fichier sitemap.xml. Il suffit d'ajouter cette action dans un de vos contr\u00f4leur.<\/p>",
+                "image": "@data\/blog\/images\/article_seo_sitemap.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Modifier le SEO : META DONNEES",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>cliquez pour afficher les m\u00e9tas s\u00e9lectionn\u00e9es.<\/p><p>Les tags &lt;meta&gt; seront ajout\u00e9s automatiquement avec les informations que vous avez indiqu\u00e9 dans la section <strong>SEO<\/strong>.<\/p><p>Concernant le &lt;script&gt; <strong>Json+LD<\/strong> : <\/p><ol><li data-list=\"bullet\">Il vous appartient d'initialiser un JSON+Ld selon votre context personnel<\/li><li data-list=\"bullet\">Ce blog met \u00e0 disposition un exemple de Behavior <em>webapp\\behaviors\\JsonLd.php<\/em> qui vou permet d'avoir un socle<\/li><li data-list=\"bullet\">A vous d'ajouter les informations utiles<\/li><\/ol>",
+                "image": "@data\/blog\/images\/article_seo_meta.webp",
+                "choix": "right"
+            },
+            {
+                "name": "titre",
+                "title": "Modifier le titre de l'article",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Modifier le titre de l'\u00e9l\u00e9ment <strong>entete<\/strong> de la section <strong>Gestion des \u00e9l\u00e9ments<\/strong><\/p>",
+                "image": "@data\/blog\/images\/article_entete.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Ajouter \/ Modifier une section sur le FRONT",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Une <strong>Section du FRONT<\/strong> est d\u00e9finie par un \u00e9l\u00e9ment <strong>titre<\/strong> et un \u00e9l\u00e9ment <strong>image-html<\/strong>.<\/p><p>Pour modifier une <strong>Section sur le FRONT<\/strong> existante, il suffit de modifier l'\u00e9l\u00e9ment <strong>titre<\/strong> et l'\u00e9l\u00e9ment <strong>image-html<\/strong>.<\/p><p>Pour ajouter une <strong>Section sur le FRONT<\/strong> il faut ajouter un \u00e9l\u00e9ment <strong>titre<\/strong> et un \u00e9l\u00e9ment <strong>image-html<\/strong><\/p><p>l'image peut-\u00eatre plac\u00e9e a gauche, \u00e0 \u00e0 droite ou au milieu selon vos besoin.<\/p>",
+                "image": "@data\/blog\/images\/article_section.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Enregistrez vos changements",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Apr\u00e8s avoir effectu\u00e9 vos changements, veuillez cliquer sur <strong>Enregistrer<\/strong><\/p>",
+                "image": null,
+                "choix": null
+            }
+        ]
+    },
+    {
+        "name": "personnalisation apparence",
+        "configType": "generic",
+        "model": "article",
+        "pathKey": "1.2",
+        "parentPathKey": "1",
+        "slug": {
+            "path": "personnaliser-l-apparence-du-blog"
+        },
+        "seo": {
+            "title": "Personnaliser l\u2019apparence du blog",
+            "description": "FractalCMS vous permet de personnaliser votre blog pour qu\u2019il refl\u00e8te votre style.",
+            "imgPath": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+            "priority": 0.5,
+            "active": 1,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 0
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Personnaliser l\u2019apparence du blog",
+                "subtitle": null,
+                "description": "FractalCMS vous permet de personnaliser votre blog pour qu\u2019il refl\u00e8te votre style.",
+                "banner": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+                "alt": ""
+            },
+            {
+                "name": "titre",
+                "title": "Le titre du site",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Rendez-vous dans la section <strong>Configuration -> Param\u00e8tres<\/strong> de l'interface admin<\/p><p>S\u00e9lectionnez le param\u00e8tre <strong>'SITE' \/ 'NAME'</strong> modifier la valeur et enregistrer.<\/p>",
+                "image": "@data\/blog\/images\/menue_parameter.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Le menu",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Rendez-vous dans la section <strong>Contenus -> Menu<\/strong> de l'interface admin<\/p><p>Puis s\u00e9lectionner le menu \u00e0 modifier<\/p><p>Vous pouvez ajouter, modifier les <strong>\u00e9l\u00e9ments du menu<\/strong> puis enregistrer.<\/p>",
+                "image": "@data\/blog\/images\/menu_menu.webp",
+                "choix": "right"
+            },
+            {
+                "name": "titre",
+                "title": "Les images",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Rendez-vous dans la section <strong>Contenus -> Articles<\/strong> de l'interface admin<\/p><p>Puis s\u00e9lectionner l'article \u00e0 modifier<\/p><p>Vous pouvez ajouter ou modifier les <strong>images<\/strong> de l'article en respectant les dimensions demand\u00e9es puis enregistrer.<\/p>",
+                "image": "@data\/blog\/images\/menu_articles.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Et pour la suite ?",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>A vous de modifier les param\u00e8tres, les vues PHP\/HTML, la CSS selon le style que vous souhaitez.<\/p><ol><li data-list=\"ordered\">Ajouter ou modifier les <strong>Configurations d'\u00e9l\u00e9ments (Configuration => Configuration \u00e9l\u00e9ment)<\/strong>, afin de cr\u00e9er vos propre template<\/li><li data-list=\"ordered\">Ajouter des <strong>Configurations d'articles Configuration => Configuration article<\/strong> pour personnalis\u00e9 un contr\u00f4leur et un rendu HTML selon votre imagination<\/li><\/ol>",
+                "image": "@data\/blog\/images\/menu_articles.webp",
+                "choix": "left"
+            }
+        ]
+    },
+    {
+        "name": "accueil",
+        "configType": "generic",
+        "model": "section",
+        "pathKey": "1",
+        "parentPathKey": null,
+        "slug": {
+            "path": "accueil"
+        },
+        "seo": {
+            "title": "Bienvenue dans votre Blog FractalCMS",
+            "description": "Ce site est un exemple que vous pouvez modifier enti\u00e8rement selon vos besoins :changer le titre et le menu,ajouter, \u00e9diter ou supprimer des articles,personnaliser l\u2019apparence avec vos propres couleurs et images.Parcourez les articles de d\u00e9mo ci-dessous pour apprendre pas \u00e0 pas comment adapter votre blog.",
+            "imgPath": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+            "active": 1,
+            "priority": 1,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 0
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Bienvenue dans votre Blog FractalCMS",
+                "subtitle": null,
+                "description": "<p>Vous venez d\u2019installer un blog bas\u00e9 sur <strong>FractalCMS<\/strong><\/p>",
+                "banner": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+                "alt": "Banni\u00e8re accueil"
+            },
+            {
+                "name": "titre",
+                "title": "Vous venez d\u2019installer un blog bas\u00e9 sur FractalCMS",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Ce site est un exemple que vous pouvez <strong>modifier enti\u00e8rement<\/strong> selon vos besoins :<\/p><ol><li data-list=\"bullet\">changer le titre et le menu,<\/li><li data-list=\"bullet\">ajouter, \u00e9diter ou supprimer des articles,<\/li><li data-list=\"bullet\">personnaliser l\u2019apparence avec vos propres couleurs et images.<\/li><\/ol><p>Parcourez les articles de d\u00e9mo ci-dessous pour apprendre pas \u00e0 pas comment adapter votre blog.<\/p>",
+                "image": null,
+                "choix": null
+            },
+            {
+                "name": "titre",
+                "title": "Modifier vos articles",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Les articles de ce blog sont g\u00e9r\u00e9s directement depuis l\u2019interface d\u2019administration de FractalCMS.<\/p><p>Pour modifier un article existant :<\/p><ol><li data-list=\"bullet\">Connectez-vous \u00e0 l\u2019interface admin.<\/li><li data-list=\"bullet\">Rendez-vous dans la section <strong>Contenus -> Articles<\/strong>.<\/li><li data-list=\"bullet\">Cliquez sur un article pour l\u2019\u00e9diter.<\/li><li data-list=\"bullet\">Modifiez le <em>titre<\/em>, le <em>contenu<\/em> ou l\u2019<em>image<\/em>.<\/li><li data-list=\"bullet\">Enregistrez vos changements \u2192 ils apparaissent imm\u00e9diatement en ligne.<\/li><\/ol><p>Vous pouvez aussi cr\u00e9er autant de nouveaux articles que vous voulez, et les organiser dans vos menus.<\/p>",
+                "image": null,
+                "target": "ici",
+                "choix": "top"
+            },
+            {
+                "name": "titre",
+                "title": "Personnaliser l\u2019apparence du blog",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Voici quelques points que vous pouvez adapter facilement :<\/p><ol><li data-list=\"bullet\"><strong>Le titre du site<\/strong> : modifiez le param\u00e8tre <code>site_name<\/code> dans la configuration.<\/li><li data-list=\"bullet\"><strong>Le menu<\/strong> : ajoutez, supprimez ou r\u00e9organisez les liens depuis l\u2019admin.<\/li><li data-list=\"bullet\"><strong>Les couleurs et la mise en page<\/strong> : modifiez le template HTML\/CSS.<\/li><li data-list=\"bullet\"><strong>Les images<\/strong> : changez la banni\u00e8re d\u2019accueil et les illustrations des articles.<\/li data-list=\"bullet\"><\/ol><p>Une fois ces \u00e9l\u00e9ments personnalis\u00e9s, votre blog sera unique et pr\u00eat \u00e0 \u00eatre partag\u00e9 !<\/p>",
+                "image": null,
+                "target": "ici",
+                "choix": "top"
+        ]
+    }
+]
