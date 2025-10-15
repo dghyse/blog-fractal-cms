@@ -17,6 +17,7 @@ use fractalCms\controllers\CmsController;
 use fractalCms\helpers\Cms;
 use fractalCms\models\Content;
 use fractalCms\models\Item;
+use webapp\behaviors\JsonLd;
 use Yii;
 use Exception;
 use yii\db\ActiveQuery;
@@ -38,6 +39,9 @@ class ContentController extends CmsController
         $behaviors = parent::behaviors();
         $behaviors['seo'] = [
             'class' => Seo::class
+        ];
+        $behaviors['jsonLd'] = [
+            'class' => JsonLd::class
         ];
         return $behaviors;
     }

@@ -19,6 +19,8 @@ use yii\redis\Connection as RedisConnection;
 use yii\redis\Cache as RedisCache;
 use yii\caching\CacheInterface;
 use fractalCms\Module as FractalCmsModule;
+use yii\web\View as YiiView;
+use fractalCms\components\View;
 $config = [
     'sourceLanguage' => 'fr',
     'language' => 'fr',
@@ -39,6 +41,9 @@ $config = [
     'vendorPath' => dirname(__DIR__, 2) . '/vendor',
     'version' => getstrenv('APP_VERSION'),
     'container' => [
+        'definitions' => [
+            YiiView::class => View::class
+        ],
         'singletons' => [
             CacheInterface::class => DummyCache::class,
             Connection::class => [
