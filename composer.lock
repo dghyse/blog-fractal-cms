@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92900e3b298a26c6053a24cbaf372d42",
+    "content-hash": "969d14f303ca026ce96c4f595be1256a",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -165,7 +165,7 @@
             "version": "v1.5.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:dghyse/fractal-cms.git",
+                "url": "https://github.com/dghyse/fractal-cms.git",
                 "reference": "5cb0f0d7b15c6eed720444eff459ce07ad06bf62"
             },
             "dist": {
@@ -198,9 +198,7 @@
                     "fractalCms\\": "src/"
                 }
             },
-            "scripts": {
-                "post-install-cmd": []
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
