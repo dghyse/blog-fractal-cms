@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "969d14f303ca026ce96c4f595be1256a",
+    "content-hash": "b83d427242ebc3395d4e72c395b7f8c2",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -162,16 +162,16 @@
         },
         {
             "name": "dghyse/fractal-cms",
-            "version": "v1.5.0",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dghyse/fractal-cms.git",
-                "reference": "5cb0f0d7b15c6eed720444eff459ce07ad06bf62"
+                "reference": "fc6aa0f88040fb154c545479a18e83d82079646a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/5cb0f0d7b15c6eed720444eff459ce07ad06bf62",
-                "reference": "5cb0f0d7b15c6eed720444eff459ce07ad06bf62",
+                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/fc6aa0f88040fb154c545479a18e83d82079646a",
+                "reference": "fc6aa0f88040fb154c545479a18e83d82079646a",
                 "shasum": ""
             },
             "require": {
@@ -192,7 +192,7 @@
                 "yiisoft/yii2-debug": "~2.0",
                 "yiisoft/yii2-gii": "~2.0"
             },
-            "type": "project",
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "fractalCms\\": "src/"
@@ -200,27 +200,30 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
+                "MIT"
             ],
             "authors": [
                 {
                     "name": "David Ghyse",
-                    "email": "davidd@webcraftdg.fr"
+                    "email": "davidg@webcraftdg.fr"
                 }
             ],
-            "description": "Dghyse porte folio",
+            "description": "FractalCMS - un CMS léger et modulaire basé sur Yii2",
             "homepage": "https://github.com/dghyse/fractal-cms",
             "keywords": [
-                "David Ghyse",
+                "blog",
                 "cms",
                 "fractal-cms",
-                "fractalcms"
+                "fractalcms",
+                "php",
+                "website",
+                "yii2"
             ],
             "support": {
                 "issues": "https://github.com/dghyse/fractal-cms/issues",
-                "source": "https://github.com/dghyse/fractal-cms/tree/v1.5.0"
+                "source": "https://github.com/dghyse/fractal-cms/tree/v1.5.1"
             },
-            "time": "2025-10-20T14:16:54+00:00"
+            "time": "2025-10-21T15:35:53+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
