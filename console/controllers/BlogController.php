@@ -408,7 +408,8 @@ class BlogController extends Controller
                     $menu->save();
                     $menu->refresh();
                     Console::stdout(' ---- CREATE MENU OK : '.$menuName."\n");
-                    foreach ($configuration as $index => $content) {
+                    $configurationMenu = array_reverse($configuration);
+                    foreach ($configurationMenu as $index => $content) {
                         $this->addMenuItem($menu, $content['contentId'], $content['name'], $index);
                     }
                     $this->addParameter('MENU', strtoupper($menuName), $menu->id);
@@ -439,13 +440,11 @@ class BlogController extends Controller
     {
         try {
             $success = true;
-            $pathKey = $menu->id.'.'.($index + 1);
-            $menuItem = MenuItem::find()->andWhere(['pathKey' => $pathKey])->one();
+            $menuItem = $menu->getMenuItems()->andWhere(['name' => ucfirst($name)])->one();
             if ($menuItem === null) {
                 $menuItem = Yii::createObject(MenuItem::class);
                 $menuItem->scenario = MenuItem::SCENARIO_CREATE;
                 $menuItem->menuId = $menu->id;
-                $menuItem->pathKey = $pathKey;
             } else {
                 $menuItem->scenario = MenuItem::SCENARIO_UPDATE;
             }
@@ -454,7 +453,7 @@ class BlogController extends Controller
             $menuItem->order = $index + 1;
             if ($menuItem->validate() === true) {
                 $menuItem->save();
-                Console::stdout(' ---- CREATE MENU ITEM OK : '.$name.' Path KEY : '.$pathKey."\n");
+                Console::stdout(' ---- CREATE MENU ITEM OK : '.$name.' order KEY : '.($index + 1)."\n");
             } else {
                 $success = false;
                 Console::stdout(' ---- CREATE MENU ITEM KO : '.Json::encode($menuItem->errors, JSON_PRETTY_PRINT)."\n");
