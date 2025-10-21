@@ -32,7 +32,7 @@ class MenuBuilder extends Component
                 $menuId = Cms::getParameter('MENU', $name);
                 $menu = Menu::findOne($menuId);
                 if ($menu instanceof Menu) {
-                    $menuItemsQuery = $menu->getMenuItemChild();
+                    $menuItemsQuery = $menu->getMenuItems(true)->orderBy(['order' => SORT_ASC]);
                     $result = $this->build($menuItemsQuery);
                 }
                 $this->menu[$name] = $result;

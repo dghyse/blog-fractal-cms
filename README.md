@@ -116,10 +116,28 @@ php yii.php fractalCms:admin/create
 ```bash
 php yii.php fractalCms:init/index
 ```
-### 5 - Create Blog
+### 5 - Create Blog 
+
+#### Génération automatique de contenus
+
 ```bash
 php yii.php blog/build-cms-site
 ```
+
+## Contenu généré automatiquement
+
+Lors de l’installation, FractalCMS crée automatiquement :
+
+* Les menus et la navigation de base,
+* Des articles et pages d’exemple,
+* Des images de démonstration,
+* La documentation de FractalCMS directement intégrée au blog.
+
+**Attention** Ces contenus sont factices : ils servent uniquement de point de départ et de démonstration.
+L’objectif est que vous disposiez immédiatement d’un site clé en main, fonctionnel, que vous pourrez ensuite personnaliser (modifier ou supprimer les articles, remplacer les images, changer les menus…).
+
+-> Vous pouvez modifier ces contenus depuis l’administration.
+
 ## Résultat attendu
 
 Une fois toutes les étapes terminées, ouvrez votre navigateur sur :  
