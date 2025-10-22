@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+
+Release v1.3.0 22/10/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
+
+* fix data rep
+
 Release v1.3.0 22/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
