@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b83d427242ebc3395d4e72c395b7f8c2",
+    "content-hash": "af6be0f35fc6dd4a28884da8461b12e7",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -162,16 +162,16 @@
         },
         {
             "name": "dghyse/fractal-cms",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dghyse/fractal-cms.git",
-                "reference": "fc6aa0f88040fb154c545479a18e83d82079646a"
+                "reference": "8df3a2568504584a312973ed493bef6862935542"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/fc6aa0f88040fb154c545479a18e83d82079646a",
-                "reference": "fc6aa0f88040fb154c545479a18e83d82079646a",
+                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/8df3a2568504584a312973ed493bef6862935542",
+                "reference": "8df3a2568504584a312973ed493bef6862935542",
                 "shasum": ""
             },
             "require": {
@@ -221,9 +221,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dghyse/fractal-cms/issues",
-                "source": "https://github.com/dghyse/fractal-cms/tree/v1.5.1"
+                "source": "https://github.com/dghyse/fractal-cms/tree/v1.5.2"
             },
-            "time": "2025-10-21T15:35:53+00:00"
+            "time": "2025-10-22T14:47:58+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
