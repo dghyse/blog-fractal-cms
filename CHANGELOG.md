@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Release v1.3.0 22/10/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
+
+* Update composer
+* Update README
+
 Release v1.2.2 22/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
