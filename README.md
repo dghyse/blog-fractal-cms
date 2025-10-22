@@ -1,5 +1,20 @@
 # FractalCMS – Blog clé en main
 
+Exemple de projet basé sur FractalCMS – un Blog clé en main prêt à l’emploi.
+
+👉 Ce projet est basé sur [FractalCMS](https://github.com/dghyse/fractal-cms).  
+N’hésitez pas à consulter la documentation complète du CMS pour aller plus loin.
+
+## Installation rapide 
+
+Vous pouvez dès maintenant installer le projet
+
+```bash
+composer create-project dghyse/blog-fractal-cms mon-blog
+cd mon-blog
+composer install
+```
+
 FractalCMS est un CMS léger et modulaire développé en PHP (basé sur [YiiFramework 2.0](https://www.yiiframework.com/)).
 Il propose un système simple et efficace pour créer rapidement des sites web.
 
@@ -15,6 +30,9 @@ Ce dépôt contient un preset “Blog” :
 
 
 ## Prérequis
+
+⚡ L’application est prête à l’emploi dès installation.
+L’utilisation de Node/NPM est optionnelle si vous souhaitez modifier ou recompiler les assets front-end (CSS/JS).
 
 ### Backend
 * Php : >= 8.2
@@ -41,9 +59,19 @@ npm run dist-clean
 ```
 ## Installation et configuration
 
+### méthode 1
+
 ```bash
-git clone https://github.com/toncompte/tonrepo.git
-cd tonrepo
+git clone https://github.com/dghyse/blog-fractal-cms.git
+cd blog-fractal-cms
+composer install
+```
+
+### Méthode 2
+
+```bash
+composer create-project dghyse/blog-fractal-cms mon-blog
+cd mon-blog
 composer install
 ```
 
@@ -80,11 +108,43 @@ DB_DRIVER=mysql
 
 ### Add module fractal-cms in config file
 
+Ce site est près à l'emploi, le fichier **common.php** est déjà paramétré pour le fonctionnement
+correct du site.
+
+
 ```bash
 common/config/common.php
 ```
+```bash
 
-```php 
+use fractalCms\Module as FractalCmsModule;
+use yii\web\View as YiiView;
+use fractalCms\components\View;
+
+```
+
+```bash 
+  'container' => [
+        'definitions' => [
+            YiiView::class => View::class
+        ],
+        'singletons' => [
+            CacheInterface::class => DummyCache::class,
+            Connection::class => [
+                'charset' => 'utf8',
+                'dsn' => getstrenv('DB_DRIVER').':host=' . getstrenv('DB_HOST') . ';port=' . getstrenv('DB_PORT') . ';dbname=' . getstrenv('DB_DATABASE'),
+                'username' => getstrenv('DB_USER'),
+                'password' => getstrenv('DB_PASSWORD'),
+                'tablePrefix' => getstrenv('DB_TABLE_PREFIX'),
+                'enableSchemaCache' => getboolenv('DB_SCHEMA_CACHE'),
+                'schemaCacheDuration' => getintenv('DB_SCHEMA_CACHE_DURATION'),
+            ],
+            \webapp\helpers\MenuBuilder::class => [
+                'class' => \webapp\helpers\MenuBuilder::class
+            ],
+            //../..
+        ]
+    ],
     'bootstrap' => [
         'fractal-cms',
         //../..
@@ -124,7 +184,11 @@ php yii.php fractalCms:init/index
 php yii.php blog/build-cms-site
 ```
 
-## Contenu généré automatiquement
+### Aperçu
+
+![capture](./data/blog/docs/image_blog.png)
+
+### Contenu généré automatiquement
 
 Lors de l’installation, FractalCMS crée automatiquement :
 
@@ -138,7 +202,9 @@ L’objectif est que vous disposiez immédiatement d’un site clé en main, fon
 
 -> Vous pouvez modifier ces contenus depuis l’administration.
 
-## Résultat attendu
+[http://localhost:8080/fractal-cms](http://localhost:8080/fractal-cms)
+
+### Résultat attendu
 
 Une fois toutes les étapes terminées, ouvrez votre navigateur sur :  
 [http://localhost:8080](http://localhost:8080)
