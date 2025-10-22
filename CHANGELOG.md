@@ -1,19 +1,24 @@
 CHANGELOG
 =========
 
-Release v1.2.1 21/10/2025 <david.ghyse@free.fr>
+Release v1.2.2 22/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
 * Update Composer
 
-Release v1.2.0 21/10/2025 <david.ghyse@free.fr>
+Release v1.2.1 21/10/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
+
+* Update Composer
+
+Release v1.2.0 21/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
 * Update JSON
 * Update Composer
 * Fix menu
 
-Release v1.0.0 15/10/2025 <david.ghyse@free.fr>
+Release v1.0.0 15/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
 * Create Site, HTML, CSS
