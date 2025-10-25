@@ -100,10 +100,13 @@ APP_ENV=prod
 
 DB_PORT=3306
 DB_HOST=localhost
-DB_DATABASE=DatabaseName
-DB_USER=user
-DB_PASSWORD=pwd
+DB_DATABASE=blog_cms
+DB_USER=dghyse
+DB_PASSWORD=redcat
 DB_DRIVER=mysql
+DB_SCHEMA_CACHE=1
+DB_SCHEMA_CACHE_DURATION=3600
+DB_SCHEMA=
 ```
 
 ### Add module fractal-cms in config file
