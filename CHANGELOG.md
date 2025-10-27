@@ -1,8 +1,14 @@
 CHANGELOG
 =========
 
+Release v1.4.0 27/10/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
 
-Release v1.3.0 22/10/2025 <davidg@webcraftdg.fr>
+* Update doc
+* Udpdate composer (FractalCMS)
+
+
+Release v1.3.1 22/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
 * fix data rep
