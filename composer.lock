@@ -162,16 +162,16 @@
         },
         {
             "name": "dghyse/fractal-cms",
-            "version": "v1.5.2",
+            "version": "v1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dghyse/fractal-cms.git",
-                "reference": "8df3a2568504584a312973ed493bef6862935542"
+                "reference": "1d8e224c24af31b80ee1f4582af63e0f14c95491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/8df3a2568504584a312973ed493bef6862935542",
-                "reference": "8df3a2568504584a312973ed493bef6862935542",
+                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/1d8e224c24af31b80ee1f4582af63e0f14c95491",
+                "reference": "1d8e224c24af31b80ee1f4582af63e0f14c95491",
                 "shasum": ""
             },
             "require": {
@@ -221,9 +221,9 @@
             ],
             "support": {
                 "issues": "https://github.com/dghyse/fractal-cms/issues",
-                "source": "https://github.com/dghyse/fractal-cms/tree/v1.5.2"
+                "source": "https://github.com/dghyse/fractal-cms/tree/v1.5.3"
             },
-            "time": "2025-10-22T14:47:58+00:00"
+            "time": "2025-10-26T16:13:08+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
