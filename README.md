@@ -100,7 +100,7 @@ APP_ENV=prod
 
 DB_PORT=3306
 DB_HOST=localhost
-DB_DATABASE=blog_cms
+DB_DATABASE=votreBase
 DB_USER=votreUser
 DB_PASSWORD=votreMdp
 DB_DRIVER=mysql
