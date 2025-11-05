@@ -20,27 +20,28 @@ $baseUrl = StaticAsset::register($this)->baseUrl;
 $logo = $baseUrl.'/img/logo.webp';
 ?>
 <footer class="shadow-inner bg-[var(--card)] mt-10" role="contentinfo">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 text-sm">
-        <div class="flex items-center space-x-2">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-2 mt-2">
             <?php
             echo Html::img($logo,
                 [
-                    'class' => 'w-10 h-10 rounded-full',
+                    'class' => 'w-8 h-8 rounded-full',
                     'width' => 64,
-                    'height' => 64,
                     'alt' => ''
                 ]
             );
 
             ?>
-            <span><?php echo $siteName;?></span>
+            <p><?php echo $siteName;?></p>
         </div>
-        <nav aria-label="Liens secondaires" class="space-x-6">
-            <?php
+        <nav aria-label="Liens secondaires"  class="">
+            <ul class="flex flex-wrap justify-center md:justify-end gap-2">
+                <?php
                 foreach ($menu as $itemMenu) {
-                    echo Html::a(\fractalCms\helpers\Cms::insertIndivisibleSpace($itemMenu['name']), Url::toRoute($itemMenu['route']), ['class' => 'hover:text-blue-600']);
+                    echo Html::tag('li', Html::a(\fractalCms\helpers\Cms::insertIndivisibleSpace($itemMenu['name']), Url::toRoute($itemMenu['route']), ['class' => 'hover:text-blue-400']));
                 }
-            ?>
+                ?>
+            </ul>
         </nav>
     </div>
 </footer>

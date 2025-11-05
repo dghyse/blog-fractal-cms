@@ -27,12 +27,12 @@ $this->title = trim(($target?->seo?->title) ?? $title);
 <?php
 echo Header::widget([]);
 ?>
-<main id="main" class="space-y-16" role="main"  tabindex="-1" portfolio-focus="main">
+<main id="main" class="px-6 space-y-8" role="main"  tabindex="-1" portfolio-focus="main">
     <?php
     echo Breadcrumb::widget(['content' => $target]);
     ?>
     <?php
-    $option['class'] = 'relative w-full h-[300px] bg-cover bg-center flex items-center justify-center';
+    $option['class'] = 'relative w-full h-[300px] mt-2 bg-cover bg-center flex items-center justify-center';
     if ($banner !== null) {
         $option['style'] = 'background-image: url(\''.Html::getImgCache($banner, ['width' => 1200, 'height' => 300]).'\')';
     }

@@ -50,7 +50,10 @@ body { background-color: var(--bg); color: var(--text); }
     line-height: 1.75rem;
   }
 }
-
+:focus {
+  outline: #0b5ed7 solid 2px;
+  outline-offset: 1px;
+}
 .submenu-container {
   z-index: 99;
 }
