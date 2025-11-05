@@ -33,9 +33,9 @@ class JsonLd extends Behavior
         try {
             $controller = $this->owner;
             if ($controller instanceof CmsController) {
-                $content = $controller->getContent();
-                if ($content !== null) {
-                    $seo = $content->getSeo()->one();
+                $target = $controller->getTarget();
+                if ($target !== null) {
+                    $seo = $target->getSeo()->one();
                     $activeJsonLd = false;
                     if(($seo instanceof Seo) && (boolean)$seo->addJsonLd === true) {
                         $activeJsonLd = true;

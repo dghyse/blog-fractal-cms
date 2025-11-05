@@ -20,7 +20,7 @@ $direction = (isset($section['direction']) === true) ? $section['direction'] : '
 ?>
 <?php
     $sectionClass = [];
-    $sectionClass[] = 'max-w-6xl mx-auto px-4 card rounded-xl shadow-lg overflow-hidden';
+    $sectionClass[] = 'max-w-6xl mx-auto py-3 card rounded-xl shadow-lg overflow-hidden';
 
     echo Html::beginTag('section', ['class' => implode(' ', $sectionClass), 'aria-describedby' => $sectionId]);
 ?>

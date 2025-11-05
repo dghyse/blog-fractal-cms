@@ -15,7 +15,7 @@
     "banner": {
       "type": "file",
       "title": "image en 1200x300",
-      "accept": "png, jpeg, jpg"
+      "accept": "png, jpeg, jpg, webp"
     },
     "alt": {
       "type": "string",
@@ -31,7 +31,7 @@
     "icon": {
       "type": "file",
       "title": "image en 64x64 (icon placé à droite du titre)",
-      "accept": "png, jpeg, jpg"
+      "accept": "png, jpeg, jpg, webp"
     }
   },
   "image-html": {
@@ -52,7 +52,7 @@
     "image": {
       "type": "file",
       "title": "droite, gauche : image en 300x300px, en haut : 1200x300px",
-      "accept": "png, jpeg, jpg"
+      "accept": "png, jpeg, jpg, webp"
     },
     "choix": {
       "type": "radio",
