@@ -11,7 +11,7 @@
         "seo": {
             "title": "Modifier vos articles",
             "description": "Les articles de ce blog sont g\u00e9r\u00e9s directement depuis l\u2019interface d\u2019administration de FractalCMS.",
-            "imgPath": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+            "imgPath": null,
             "active": 1,
             "priority": 0.5,
             "ogMeta": 1,
@@ -25,8 +25,7 @@
                 "subtitle": null,
                 "description": "Les articles de ce blog sont g\u00e9r\u00e9s directement depuis l\u2019interface d\u2019administration de FractalCMS.",
                 "banner": "@data\/blog\/images\/blog_accueil_1200x300.webp",
-                "alt": "",
-                "id": 1
+                "alt": ""
             },
             {
                 "name": "titre",
@@ -141,7 +140,7 @@
         "seo": {
             "title": "Personnaliser l\u2019apparence du blog",
             "description": "FractalCMS vous permet de personnaliser votre blog pour qu\u2019il refl\u00e8te votre style.",
-            "imgPath": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+            "imgPath": null,
             "priority": 0.5,
             "active": 1,
             "ogMeta": 1,
@@ -204,6 +203,69 @@
         ]
     },
     {
+        "name": "Gestion des étiquettes",
+        "configType": "generic",
+        "model": "article",
+        "pathKey": "1.3",
+        "parentPathKey": "1",
+        "slug": {
+            "path": "gestion-des-etiquettes"
+        },
+        "seo": {
+            "title": "Gestion des étiquettes",
+            "description": "Dans FractalCMS, il est possible de créer des étiquettes (Tag).Un contenu qu'il soit une section ou un article peut-être lié à un ou plusieurs étiquettes..",
+            "imgPath": null,
+            "active": 1,
+            "priority": 0.5,
+            "ogMeta": 1,
+            "twitterMeta": 1,
+            "addJsonLd": 0
+        },
+        "items": [
+            {
+                "name": "entete",
+                "title": "Gestion des étiquettes (Tags)",
+                "subtitle": null,
+                "description": "<p>Dans <strong>FractalCMS</strong>, il est possible de créer des étiquettes (Tag).Un contenu qu'il soit une <strong>section</strong> ou un <strong>article</strong> peut-être lié à un ou plusieurs étiquettes..</p>",
+                "banner": "@data/blog/images/blog_accueil_1200x300.webp",
+                "alt": ""
+            },
+            {
+                "name": "titre",
+                "title": "Interface",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p><h3>Définition</h3><p>Dans FractalCMS, il est possible de créer des étiquettes (Tag).</p><p>Un contenu qu'il soit une <strong>section</strong> ou un <strong>article</strong> peut-être lié à un ou plusieurs étiquettes.</p><h3>Editer / Ajouter</h3><p>L'édition d'une étiquette se réalise en cliquant sur le stylet de la ligne.</p><p>La création se réalise en cliquant sur le bouton 'Ajouter'.</p><\/p>",
+                "image": "@data\/blog\/images\/tag_interface_blanc.webp",
+                "choix": "left"
+            },
+            {
+                "name": "titre",
+                "title": "Formulaire de création (Partie haute)",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p><strong>Actif</strong> : l'étiquette doit-être actif pour être visible sur le front</p><p><strong>Nom</strong> : Nom de l'étiquette (cette valeur doit être unique dans le site)</p><p><strong>Configuration de l'étiquette</strong> : liste de choix liée aux configurations créés dans Configuration du type des articles</p><h3>Définition</h3><p><strong>Configuration de l'étiquette (types d'article)</strong></p><p>Cette option permet de définir vers quelle <strong>contrôleur/action</strong> l'url de l'étiquette sera dirigé afin</p><p>de construire la vue et l'envoyer au Front.</p>",
+                "image": "@data\/blog\/images\/tag_form_haut_blanc.webp",
+                "choix": "right"
+            },
+            {
+                "name": "titre",
+                "title": "Formulaire de création (Reste du formulaire)",
+                "icon": null
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Toutes les parties suivantes du formulaire fonctionnent comme le formulaire de création d'un article.</p>",
+                "image": null,
+                "choix": "right"
+            }
+        ]
+    },
+    {
         "name": "accueil",
         "configType": "generic",
         "model": "section",
@@ -215,7 +277,7 @@
         "seo": {
             "title": "Bienvenue dans votre Blog FractalCMS",
             "description": "Ce site est un exemple que vous pouvez modifier enti\u00e8rement selon vos besoins :changer le titre et le menu,ajouter, \u00e9diter ou supprimer des articles,personnaliser l\u2019apparence avec vos propres couleurs et images.Parcourez les articles de d\u00e9mo ci-dessous pour apprendre pas \u00e0 pas comment adapter votre blog.",
-            "imgPath": "@data\/blog\/images\/blog_accueil_1200x300.webp",
+            "imgPath": null,
             "active": 1,
             "priority": 1,
             "ogMeta": 1,
@@ -262,6 +324,18 @@
             {
                 "name": "image-html",
                 "html": "<p>Voici quelques points que vous pouvez adapter facilement :<\/p><ol><li data-list=\"bullet\"><strong>Le titre du site<\/strong> : modifiez le param\u00e8tre <code>site_name<\/code> dans la configuration.<\/li><li data-list=\"bullet\"><strong>Le menu<\/strong> : ajoutez, supprimez ou r\u00e9organisez les liens depuis l\u2019admin.<\/li><li data-list=\"bullet\"><strong>Les couleurs et la mise en page<\/strong> : modifiez le template HTML\/CSS.<\/li><li data-list=\"bullet\"><strong>Les images<\/strong> : changez la banni\u00e8re d\u2019accueil et les illustrations des articles.<\/li data-list=\"bullet\"><\/ol><p>Une fois ces \u00e9l\u00e9ments personnalis\u00e9s, votre blog sera unique et pr\u00eat \u00e0 \u00eatre partag\u00e9 !<\/p>",
+                "image": null,
+                "target": "ici",
+                "choix": "top"
+            },
+            {
+                "name": "titre",
+                "title": "Gestion des étiquettes (Tags)",
+                "icon": "@data/blog/images/new.svg"
+            },
+            {
+                "name": "image-html",
+                "html": "<p>Les étiquettes permettent un rangement intuitif des contenus de fractalCMS. les articles peuvent être liés à une étiquette permettant de les classés, trouvés, répertoriés facilement.</p>",
                 "image": null,
                 "target": "ici",
                 "choix": "top"

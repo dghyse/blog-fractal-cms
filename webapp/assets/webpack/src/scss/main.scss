@@ -17,6 +17,14 @@
   --accent: #b91c1c; /* Rouge foncé accessible sur fond clair */
 }
 
+.theme-soft {
+  --bg: #1e293b;
+  --text: #ffffff;
+  --card: #1f2937;
+  --accent: #3b82f6; /* Bleu foncé accessible sur fond clair */
+}
+
+
 body { background-color: var(--bg); color: var(--text); }
 .card { background-color: var(--card); color: var(--text); }
 .link { color: var(--text); }

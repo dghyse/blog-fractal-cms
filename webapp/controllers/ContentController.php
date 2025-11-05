@@ -54,16 +54,16 @@ class ContentController extends CmsController
     {
         try {
             Yii::debug('Trace :'.__METHOD__, __METHOD__);
-            $content = $this->getContent();
-            $itemEntete = $content->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'ENTETE')])->one();
-            $itemsQuery = $content->getItems()->andWhere([
+            $target = $this->getTarget();
+            $itemEntete = $target->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'ENTETE')])->one();
+            $itemsQuery = $target->getItems()->andWhere([
                 'not', ['configItemId' => [
                     Cms::getParameter('ITEM', 'ENTETE'),
                     ]]]);
             $sections = static::buildSections($itemsQuery);
             return $this->render('index',
                 [
-                    'content' => $content,
+                    'target' => $target,
                     'entete' => $itemEntete,
                     'sections' => $sections
                     ]);

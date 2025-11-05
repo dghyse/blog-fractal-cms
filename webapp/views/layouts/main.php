@@ -36,7 +36,7 @@ $class = 'wrapper';
         <?php echo Html::tag('meta', '', ['name' => 'X-Version', 'content' => Yii::$app->version]); ?>
         <?php $this->head(); ?>
     </head>
-<?php echo Html::beginTag('body', ['class' => 'theme-portfolio font-sans']); ?>
+<?php echo Html::beginTag('body', ['class' => 'theme-shop font-sans']); ?>
 <?php $this->beginBody(); ?>
     <?php
     echo $content;

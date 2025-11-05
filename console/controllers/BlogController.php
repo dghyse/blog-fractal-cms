@@ -19,7 +19,6 @@ use fractalCms\models\MenuItem;
 use fractalCms\models\Parameter;
 use fractalCms\models\Seo;
 use fractalCms\models\Slug;
-use fractalCms\models\User;
 use fractalCms\Module;
 use yii\console\Controller;
 use Exception;
@@ -284,10 +283,6 @@ class BlogController extends Controller
                 }
                 $seo->attributes = $contentJson['seo'];
                 if ($seo->validate() === true) {
-                    $dataFile = Module::getInstance()->filePath;
-                    $relativeDirName = Module::getInstance()->relativeSeoImgDirName;
-                    $seo->imgPath = $contentJson['seo']['imgPath'];
-                    $seo->imgPath = $seo->saveFile($dataFile, $relativeDirName, $seo->imgPath, false);
                     $success = $seo->save();
                     if ($success === true) {
                         $content->seoId = $seo->id;
