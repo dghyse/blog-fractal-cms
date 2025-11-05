@@ -16,9 +16,9 @@ use yii\helpers\Url;
 use webapp\assets\StaticAsset;
 $baseUrl = StaticAsset::register($this)->baseUrl;
 ?>
-<nav id="main-nav" role="navigation" class="space-x-6" aria-label="Menu principal" blog-front-menu="">
+<nav id="main-nav" role="navigation"  aria-label="Menu principal" blog-front-menu="">
     <button id="menu-toggle"
-            class="md:hidden text-gray-200 focus:outline-none"
+            class="md:hidden  focus:outline-none"
             aria-controls="main-menu-nav"
             aria-expanded="false"
             aria-label="Ouvrir le menu">
@@ -28,7 +28,7 @@ $baseUrl = StaticAsset::register($this)->baseUrl;
                   d="M4 6h16M4 12h16M4 18h16" />
         </svg>
     </button>
-    <ul id="main-menu-nav" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-6 absolute md:static z-40 left-0 w-full border-t md:border-0 shadow-md md:shadow-none">
+    <ul id="main-menu-nav" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-6 bg-[var(--card)]  absolute md:static z-40 left-0 w-full border-t md:border-0 shadow-md md:shadow-none">
         <?php foreach ($menu as $index => $itemMenu) :
             $child = ($itemMenu['child']) ?? null;
             $idNav = 'nav-'.($index + 1);
