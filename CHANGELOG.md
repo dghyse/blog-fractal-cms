@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+
+Release v1.6.0 05/11/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
+
+* update composoer to v1.6.1
+* update js menu
+* update responsive
+* Add Doc Tag
+
 Release v1.4.0 27/10/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 
