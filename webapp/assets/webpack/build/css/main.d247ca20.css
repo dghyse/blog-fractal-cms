@@ -836,11 +836,11 @@ select {
   top: 100%;
 }.z-40 {
   z-index: 40;
+}.m-4 {
+  margin: 1rem;
 }.mx-auto {
   margin-left: auto;
   margin-right: auto;
-}.mb-4 {
-  margin-bottom: 1rem;
 }.ml-2 {
   margin-left: 0.5rem;
 }.mt-10 {
@@ -1043,7 +1043,7 @@ select {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
           transition-duration: 150ms;
-}.theme-blog{--bg: #111827;--text: #f3f4f6;--card: #1f2937;--accent: #3b82f6}.theme-shop{--bg: #ffffff;--text: #111827;--card: #f3f4f6;--accent: #b91c1c}body{background-color:var(--bg);color:var(--text)}.card{background-color:var(--card);color:var(--text)}.link{color:var(--text)}.link:hover{color:var(--accent)}.btn-link{display:inline-block;margin-top:1rem;font-weight:600;color:var(--accent)}.btn-link:hover{text-decoration:underline}.wysiwyg ol,.wysiwyg ul{list-style:disc !important;margin:10px}.wysiwyg h3{font-size:1.25rem;line-height:1.75rem}.submenu-container{z-index:99}.hover\:bg-gray-50:hover {
+}.theme-blog{--bg: #111827;--text: #f3f4f6;--card: #1f2937;--accent: #3b82f6}.theme-shop{--bg: #ffffff;--text: #111827;--card: #f3f4f6;--accent: #b91c1c}.theme-soft{--bg: #1e293b;--text: #ffffff;--card: #1f2937;--accent: #3b82f6}body{background-color:var(--bg);color:var(--text)}.card{background-color:var(--card);color:var(--text)}.link{color:var(--text)}.link:hover{color:var(--accent)}.btn-link{display:inline-block;margin-top:1rem;font-weight:600;color:var(--accent)}.btn-link:hover{text-decoration:underline}.wysiwyg ol,.wysiwyg ul{list-style:disc !important;margin:10px}.wysiwyg h3{font-size:1.25rem;line-height:1.75rem}.submenu-container{z-index:99}.hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }.hover\:text-blue-600:hover {
