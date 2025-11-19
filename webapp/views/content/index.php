@@ -8,19 +8,20 @@
  * @package webapp\views\layouts
  *
  * @var $this yii\web\View
- * @var $target \fractalCms\models\Content
- * @var $entete \fractalCms\models\Item
+ * @var $target \fractalCms\content\models\Content
+ * @var $entete \fractalCms\content\models\Item
  * @var $sections array
  */
-use fractalCms\helpers\Html;
+use fractalCms\content\helpers\Html;
+use fractalCms\content\models\Item;
 use webapp\widgets\Header;
 use webapp\widgets\Footer;
 use webapp\widgets\Breadcrumb;
 
-$title = ($entete instanceof \fractalCms\models\Item) ? $entete->title : $target->name;
-$subtitle = ($entete instanceof \fractalCms\models\Item) ? $entete->subtitle : null;
-$banner = ($entete instanceof \fractalCms\models\Item) ? $entete->banner : null;
-$description = ($entete instanceof \fractalCms\models\Item) ? $entete->description : null;
+$title = ($entete instanceof Item) ? $entete->title : $target->name;
+$subtitle = ($entete instanceof Item) ? $entete->subtitle : null;
+$banner = ($entete instanceof Item) ? $entete->banner : null;
+$description = ($entete instanceof Item) ? $entete->description : null;
 $this->title = trim(($target?->seo?->title) ?? $title);
 
 ?>

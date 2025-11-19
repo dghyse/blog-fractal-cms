@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99b1d8f842029bd87219ea6765fe35f2",
+    "content-hash": "fec814c178bc41fd9d8c644c6fcf70d9",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -23,16 +23,16 @@
         },
         {
             "name": "bower-asset/inputmask",
-            "version": "5.0.8",
+            "version": "5.0.9",
             "source": {
                 "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
-                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/e0f39e0c93569c6b494c3a57edef2c59313a6b64",
-                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/310a33557e2944daf86d5946a5e8c82b9118f8f7",
+                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -161,71 +161,6 @@
             "time": "2018-03-26T11:24:36+00:00"
         },
         {
-            "name": "dghyse/fractal-cms",
-            "version": "v1.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dghyse/fractal-cms.git",
-                "reference": "d6699bb258332c2a2abb271c154b2516942b10b8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dghyse/fractal-cms/zipball/d6699bb258332c2a2abb271c154b2516942b10b8",
-                "reference": "d6699bb258332c2a2abb271c154b2516942b10b8",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/bootstrap": "~5.0",
-                "ext-dom": "*",
-                "ext-fileinfo": "*",
-                "ext-gd": "*",
-                "ext-intl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "league/flysystem": "^3.25",
-                "php": ">=8.2",
-                "vlucas/phpdotenv": "~5.0",
-                "yiisoft/yii2": "~2.0",
-                "yiisoft/yii2-redis": "~2.0"
-            },
-            "require-dev": {
-                "yiisoft/yii2-debug": "~2.0",
-                "yiisoft/yii2-gii": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "fractalCms\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Ghyse",
-                    "email": "davidg@webcraftdg.fr"
-                }
-            ],
-            "description": "FractalCMS - un CMS léger et modulaire basé sur Yii2",
-            "homepage": "https://github.com/dghyse/fractal-cms",
-            "keywords": [
-                "blog",
-                "cms",
-                "fractal-cms",
-                "fractalcms",
-                "php",
-                "website",
-                "yii2"
-            ],
-            "support": {
-                "issues": "https://github.com/dghyse/fractal-cms/issues",
-                "source": "https://github.com/dghyse/fractal-cms/tree/v1.6.1"
-            },
-            "time": "2025-11-04T16:03:49+00:00"
-        },
-        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.19.0",
             "source": {
@@ -350,16 +285,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.30.1",
+            "version": "3.30.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "c139fd65c1f796b926f4aec0df37f6caa959a8da"
+                "reference": "5966a8ba23e62bdb518dd9e0e665c2dbd4b5b277"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c139fd65c1f796b926f4aec0df37f6caa959a8da",
-                "reference": "c139fd65c1f796b926f4aec0df37f6caa959a8da",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5966a8ba23e62bdb518dd9e0e665c2dbd4b5b277",
+                "reference": "5966a8ba23e62bdb518dd9e0e665c2dbd4b5b277",
                 "shasum": ""
             },
             "require": {
@@ -427,22 +362,22 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.30.1"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.30.2"
             },
-            "time": "2025-10-20T15:35:26+00:00"
+            "time": "2025-11-10T17:13:11+00:00"
         },
         {
             "name": "league/flysystem-local",
-            "version": "3.30.0",
+            "version": "3.30.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-local.git",
-                "reference": "6691915f77c7fb69adfb87dcd550052dc184ee10"
+                "reference": "ab4f9d0d672f601b102936aa728801dd1a11968d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-local/zipball/6691915f77c7fb69adfb87dcd550052dc184ee10",
-                "reference": "6691915f77c7fb69adfb87dcd550052dc184ee10",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-local/zipball/ab4f9d0d672f601b102936aa728801dd1a11968d",
+                "reference": "ab4f9d0d672f601b102936aa728801dd1a11968d",
                 "shasum": ""
             },
             "require": {
@@ -476,9 +411,9 @@
                 "local"
             ],
             "support": {
-                "source": "https://github.com/thephpleague/flysystem-local/tree/3.30.0"
+                "source": "https://github.com/thephpleague/flysystem-local/tree/3.30.2"
             },
-            "time": "2025-05-21T10:34:19+00:00"
+            "time": "2025-11-10T11:23:37+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -946,6 +881,168 @@
                 }
             ],
             "time": "2025-04-30T23:37:27+00:00"
+        },
+        {
+            "name": "webcraftdg/fractal-cms-content",
+            "version": "dev-devel",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:webcraftdg/fractal-cms-content.git",
+                "reference": "ca974eea44fa068971c96e57aa5a1b938bebba9c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-content/zipball/ca974eea44fa068971c96e57aa5a1b938bebba9c",
+                "reference": "ca974eea44fa068971c96e57aa5a1b938bebba9c",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": "~5.0",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-gd": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "league/flysystem": "^3.25",
+                "php": ">=8.2",
+                "vlucas/phpdotenv": "~5.0",
+                "webcraftdg/fractal-cms-core": "dev-devel",
+                "yiisoft/yii2": "~2.0",
+                "yiisoft/yii2-redis": "~2.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "^5.3",
+                "codeception/module-asserts": "*",
+                "codeception/module-db": "^3.2",
+                "codeception/module-phpbrowser": "*",
+                "codeception/module-yii2": "^2.0",
+                "yiisoft/yii2-debug": "~2.0",
+                "yiisoft/yii2-gii": "~2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "fractalCms\\content\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Ghyse",
+                    "email": "davidg@webcraftdg.fr"
+                }
+            ],
+            "description": "FractalCMS - un CMS léger et modulaire basé sur Yii2",
+            "homepage": "https://github.com/webcraftdg/fractal-cms-content",
+            "keywords": [
+                "blog",
+                "cms",
+                "fractal-cms",
+                "fractalcms",
+                "php",
+                "website",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/webcraftdg/fractal-cms-content/issues",
+                "source": "https://github.com/webcraftdg/fractal-cms-content/tree/devel"
+            },
+            "time": "2025-11-19T10:29:15+00:00"
+        },
+        {
+            "name": "webcraftdg/fractal-cms-core",
+            "version": "dev-devel",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:webcraftdg/fractal-cms-core.git",
+                "reference": "f67271bebd09b8c34d64597ed997b48a60ddfddf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-core/zipball/f67271bebd09b8c34d64597ed997b48a60ddfddf",
+                "reference": "f67271bebd09b8c34d64597ed997b48a60ddfddf",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": "~5.0",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-gd": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "league/flysystem": "^3.25",
+                "php": ">=8.2",
+                "vlucas/phpdotenv": "~5.0",
+                "yiisoft/yii2": "~2.0",
+                "yiisoft/yii2-redis": "~2.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "^5.3",
+                "codeception/module-asserts": "*",
+                "codeception/module-db": "^3.2",
+                "codeception/module-phpbrowser": "*",
+                "codeception/module-yii2": "^2.0",
+                "yiisoft/yii2-debug": "~2.0",
+                "yiisoft/yii2-gii": "~2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "fractalCms\\core\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "archive": {
+                "exclude": [
+                    "tests"
+                ]
+            },
+            "scripts": {
+                "post-install-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Ghyse",
+                    "email": "davidg@webcraftdg.fr"
+                }
+            ],
+            "description": "FractalCMS - CORE - un CMS léger et modulaire basé sur Yii2",
+            "homepage": "https://github.com/webcraftdg/fractal-cms-core",
+            "keywords": [
+                "cms",
+                "core",
+                "fractal-cms",
+                "php",
+                "webcraftdg",
+                "website",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/webcraftdg/fractal-cms-core/issues",
+                "source": "https://github.com/webcraftdg/fractal-cms-core/tree/devel"
+            },
+            "time": "2025-11-19T10:52:13+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1443,7 +1540,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "webcraftdg/fractal-cms-content": 20,
+        "webcraftdg/fractal-cms-core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

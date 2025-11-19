@@ -2,7 +2,7 @@
 
 namespace webapp\widgets;
 
-use fractalCms\models\Content;
+use fractalCms\content\models\Content;
 use yii\base\Widget;
 use Yii;
 use Exception;

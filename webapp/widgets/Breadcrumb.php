@@ -2,14 +2,12 @@
 
 namespace webapp\widgets;
 
-use fractalCms\helpers\Cms;
-use fractalCms\models\Content;
-use webapp\behaviors\JsonLd;
-use webapp\helpers\MenuBuilder;
+use fractalCms\content\models\Content;
+use fractalCms\core\models\Parameter;
+use fractalCms\content\models\Item as ItemModel;
 use yii\base\Widget;
 use Yii;
 use Exception;
-use const Grpc\CALL_ERROR_NOT_ON_CLIENT;
 
 class Breadcrumb extends Widget
 {
@@ -49,8 +47,8 @@ class Breadcrumb extends Widget
             /** @var Content $content */
             foreach ($query->each() as $content) {
                 if ($content->pathKey !== '1') {
-                    $entete = $content->getItemByConfigId(Cms::getParameter('ITEM', 'ENTETE'));
-                    $name = ($entete instanceof \fractalCms\models\Item) ? $entete->title : $content->name;
+                    $entete = $content->getItemByConfigId(Parameter::getParameter('ITEM', 'ENTETE'));
+                    $name = ($entete instanceof ItemModel) ? $entete->title : $content->name;
                 } else {
                     $name = 'Accueil';
                 }
@@ -60,7 +58,7 @@ class Breadcrumb extends Widget
                 ];
             }
             if (count($breadcumb) > 0) {
-                $enteteContent = $this->content->getItemByConfigId(Cms::getParameter('ITEM', 'ENTETE'));
+                $enteteContent = $this->content->getItemByConfigId(Parameter::getParameter('ITEM', 'ENTETE'));
                 $name = ($enteteContent !== null) ? $enteteContent->title : $this->content->name;
                 $breadcumb[] = [
                     'name' => $name,
