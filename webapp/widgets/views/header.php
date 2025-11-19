@@ -8,12 +8,12 @@
  * @package webapp\views\layouts
  *
  * @var $this yii\web\View
- * @var \fractalCms\models\Content $element
+ * @var \fractalCms\content\models\Content $element
  * @var string $siteName
  *
  */
 use webapp\assets\StaticAsset;
-use fractalCms\helpers\Html;
+use fractalCms\content\helpers\Html;
 $baseUrl = StaticAsset::register($this)->baseUrl;
 
 $logo = $baseUrl.'/img/logo.webp';

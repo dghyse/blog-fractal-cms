@@ -20,15 +20,22 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/webcraftdg/fractal-cms-core.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/webcraftdg/fractal-cms-content.git"
     }
   ],
   "require": {
     "php": ">=8.2",
-    "dghyse/fractal-cms": "~v1.5"
+    "webcraftdg/fractal-cms-content": "dev-devel",
+    "webcraftdg/fractal-cms-core": "dev-devel"
   },
   "require-dev" : {
-    "yiisoft/yii2-debug":"~2.0",
-    "yiisoft/yii2-gii":"~2.0"
   },
   "config": {
     "process-timeout": 1800,

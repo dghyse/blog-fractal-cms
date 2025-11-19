@@ -2,7 +2,7 @@
 
 namespace webapp\widgets;
 
-use fractalCms\helpers\Cms;
+use fractalCms\core\models\Parameter;
 use webapp\helpers\MenuBuilder;
 use yii\base\Widget;
 use Yii;
@@ -34,7 +34,7 @@ class Footer extends Widget
             if ($this->menuBuilder instanceof MenuBuilder) {
                 $menu = $this->menuBuilder->get('FOOTER');
             }
-            $siteName = Cms::getParameter('SITE', 'NAME');
+            $siteName = Parameter::getParameter('SITE', 'NAME');
             return $this->render('footer', [
                 'element' => $this->element,
                 'menu' => $menu,

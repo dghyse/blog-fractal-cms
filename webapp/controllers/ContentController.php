@@ -12,11 +12,10 @@
 namespace webapp\controllers;
 
 
-use fractalCms\behaviors\Seo;
-use fractalCms\controllers\CmsController;
-use fractalCms\helpers\Cms;
-use fractalCms\models\Content;
-use fractalCms\models\Item;
+use fractalCms\content\models\Seo;
+use fractalCms\content\controllers\CmsController;
+use fractalCms\content\models\Item;
+use fractalCms\core\models\Parameter;
 use webapp\behaviors\JsonLd;
 use Yii;
 use Exception;
@@ -55,10 +54,10 @@ class ContentController extends CmsController
         try {
             Yii::debug('Trace :'.__METHOD__, __METHOD__);
             $target = $this->getTarget();
-            $itemEntete = $target->getItems()->andWhere(['configItemId' => Cms::getParameter('ITEM', 'ENTETE')])->one();
+            $itemEntete = $target->getItems()->andWhere(['configItemId' => Parameter::getParameter('ITEM', 'ENTETE')])->one();
             $itemsQuery = $target->getItems()->andWhere([
                 'not', ['configItemId' => [
-                    Cms::getParameter('ITEM', 'ENTETE'),
+                    Parameter::getParameter('ITEM', 'ENTETE'),
                     ]]]);
             $sections = static::buildSections($itemsQuery);
             return $this->render('index',
@@ -82,7 +81,7 @@ class ContentController extends CmsController
             $section = null;
             /** @var Item $item */
             foreach ($itemsQuery->each() as $item) {
-                if ($item->configItemId == Cms::getParameter('ITEM', 'TITRE')) {
+                if ($item->configItemId == Parameter::getParameter('ITEM', 'TITRE')) {
                     if ($section !== null) {
                         $sections[] = $section;
                     }
@@ -95,7 +94,7 @@ class ContentController extends CmsController
                         $section['items'] = [];
                     }
 
-                    if ($item->configItemId == Cms::getParameter('ITEM', 'IMAGE_HTML')) {
+                    if ($item->configItemId == Parameter::getParameter('ITEM', 'IMAGE_HTML')) {
 
                         $section['type'] = 'IMAGE_HTML';
                         $section['hasImg'] = empty($item?->image);

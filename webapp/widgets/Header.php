@@ -2,8 +2,7 @@
 
 namespace webapp\widgets;
 
-use fractalCms\helpers\Cms;
-use webapp\helpers\MenuBuilder;
+use fractalCms\core\models\Parameter;
 use yii\base\Widget;
 use Yii;
 use Exception;
@@ -18,7 +17,7 @@ class Header extends Widget
     {
         try {
             Yii::debug('Trace: '.__METHOD__, __METHOD__);
-            $siteName = Cms::getParameter('SITE', 'NAME');
+            $siteName = Parameter::getParameter('SITE', 'NAME');
             return $this->render('header', [
                 'element' => $this->element,
                 'siteName' => $siteName
