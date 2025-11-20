@@ -3,7 +3,7 @@
   "description": "Projet squelette Blog basé sur FractalCMS – prêt à l'emploi pour démarrer rapidement.",
   "keywords": ["blog", "blog", "fractal-cms", "fractalCms"],
   "homepage": "https://github.com/dghyse/blog-fractal-cms",
-  "version": "1.6.0",
+  "version": "v2.0.0",
   "type": "project",
   "license": "MIT",
   "support": {
@@ -20,20 +20,12 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/webcraftdg/fractal-cms-core.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/webcraftdg/fractal-cms-content.git"
     }
   ],
   "require": {
     "php": ">=8.2",
-    "webcraftdg/fractal-cms-content": "dev-devel",
-    "webcraftdg/fractal-cms-core": "dev-devel"
+    "webcraftdg/fractal-cms-core": "v2.0.0",
+    "webcraftdg/fractal-cms-content": "v2.0.0"
   },
   "require-dev" : {
   },

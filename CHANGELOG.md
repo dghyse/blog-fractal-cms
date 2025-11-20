@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Release v2.0.0 20/11/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
+
+* Update Fractal-cms
+* Udpate Doc
 
 Release v1.6.0 05/11/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
