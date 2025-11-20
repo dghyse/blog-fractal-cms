@@ -12,7 +12,6 @@ Vous pouvez dès maintenant installer le projet
 ```bash
 composer create-project dghyse/blog-fractal-cms mon-blog
 cd mon-blog
-composer install
 ```
 
 FractalCMS est un CMS léger et modulaire développé en PHP (basé sur [YiiFramework 2.0](https://www.yiiframework.com/)).
@@ -72,7 +71,6 @@ composer install
 ```bash
 composer create-project dghyse/blog-fractal-cms mon-blog
 cd mon-blog
-composer install
 ```
 
 ## Init CMS For install Blog
@@ -120,9 +118,8 @@ common/config/common.php
 ```
 ```bash
 
-use fractalCms\Module as FractalCmsModule;
 use yii\web\View as YiiView;
-use fractalCms\components\View;
+use fractalCms\content\components\View;
 
 ```
 
@@ -149,12 +146,16 @@ use fractalCms\components\View;
         ]
     ],
     'bootstrap' => [
-        'fractal-cms',
+         'fractal-cms',
+         'fractal-cms-content',
         //../..
     ],
     'modules' => [
         'fractal-cms' => [
-            'class' => FractalCmsModule::class
+            'class' =>  \fractalCms\core\Module::class
+        ],
+        'fractal-cms-content' => [
+            'class' =>  \fractalCms\content\Module::class
         ],
         //../..
     ],
@@ -177,7 +178,7 @@ php yii.php fractalCms:admin/create
 ```
 ### 4 - INIT content
 ```bash
-php yii.php fractalCms:init/index
+php yii.php fractalCmsContent:init/index
 ```
 ### 5 - Create Blog 
 
