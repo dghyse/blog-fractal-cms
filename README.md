@@ -184,6 +184,9 @@ php yii.php fractalCmsContent:init/index
 
 #### Génération automatique de contenus
 
+1. Créer un répertoire runtime si il n'existe pas dans console/
+
+2. Lancer la commande suivante
 ```bash
 php yii.php blog/build-cms-site
 ```
