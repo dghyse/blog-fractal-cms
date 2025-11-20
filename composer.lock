@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fec814c178bc41fd9d8c644c6fcf70d9",
+    "content-hash": "5338d334fe212fb50c3591ae9242e0e5",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -23,16 +23,16 @@
         },
         {
             "name": "bower-asset/inputmask",
-            "version": "5.0.9",
+            "version": "5.0.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
-                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/310a33557e2944daf86d5946a5e8c82b9118f8f7",
-                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/e0f39e0c93569c6b494c3a57edef2c59313a6b64",
+                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -44,16 +44,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "3.7.1",
+            "version": "3.6.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
+                "url": "git@github.com:jquery/jquery-dist.git",
+                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/fde1f76e2799dd877c176abde0ec836553246991",
-                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/91ef2d8836342875f2519b5815197ea0f23613cf",
+                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
             },
             "type": "bower-asset",
             "license": [
@@ -884,16 +884,16 @@
         },
         {
             "name": "webcraftdg/fractal-cms-content",
-            "version": "dev-devel",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:webcraftdg/fractal-cms-content.git",
-                "reference": "ca974eea44fa068971c96e57aa5a1b938bebba9c"
+                "url": "https://github.com/webcraftdg/fractal-cms-content.git",
+                "reference": "43a7be4737f5423d27fbd24f4407ce2767159684"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-content/zipball/ca974eea44fa068971c96e57aa5a1b938bebba9c",
-                "reference": "ca974eea44fa068971c96e57aa5a1b938bebba9c",
+                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-content/zipball/43a7be4737f5423d27fbd24f4407ce2767159684",
+                "reference": "43a7be4737f5423d27fbd24f4407ce2767159684",
                 "shasum": ""
             },
             "require": {
@@ -907,7 +907,7 @@
                 "league/flysystem": "^3.25",
                 "php": ">=8.2",
                 "vlucas/phpdotenv": "~5.0",
-                "webcraftdg/fractal-cms-core": "dev-devel",
+                "webcraftdg/fractal-cms-core": "v2.0.0",
                 "yiisoft/yii2": "~2.0",
                 "yiisoft/yii2-redis": "~2.0"
             },
@@ -920,21 +920,13 @@
                 "yiisoft/yii2-debug": "~2.0",
                 "yiisoft/yii2-gii": "~2.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "fractalCms\\content\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "post-install-cmd": []
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -957,22 +949,22 @@
             ],
             "support": {
                 "issues": "https://github.com/webcraftdg/fractal-cms-content/issues",
-                "source": "https://github.com/webcraftdg/fractal-cms-content/tree/devel"
+                "source": "https://github.com/webcraftdg/fractal-cms-content/tree/v2.0.0"
             },
-            "time": "2025-11-19T10:29:15+00:00"
+            "time": "2025-11-20T14:43:03+00:00"
         },
         {
             "name": "webcraftdg/fractal-cms-core",
-            "version": "dev-devel",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:webcraftdg/fractal-cms-core.git",
-                "reference": "f67271bebd09b8c34d64597ed997b48a60ddfddf"
+                "url": "https://github.com/webcraftdg/fractal-cms-core.git",
+                "reference": "e9bde5a476a606a942a93d3dcef0bc68532ff773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-core/zipball/f67271bebd09b8c34d64597ed997b48a60ddfddf",
-                "reference": "f67271bebd09b8c34d64597ed997b48a60ddfddf",
+                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-core/zipball/e9bde5a476a606a942a93d3dcef0bc68532ff773",
+                "reference": "e9bde5a476a606a942a93d3dcef0bc68532ff773",
                 "shasum": ""
             },
             "require": {
@@ -998,26 +990,13 @@
                 "yiisoft/yii2-debug": "~2.0",
                 "yiisoft/yii2-gii": "~2.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "fractalCms\\core\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests/"
-                }
-            },
-            "archive": {
-                "exclude": [
-                    "tests"
-                ]
-            },
-            "scripts": {
-                "post-install-cmd": []
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1040,9 +1019,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webcraftdg/fractal-cms-core/issues",
-                "source": "https://github.com/webcraftdg/fractal-cms-core/tree/devel"
+                "source": "https://github.com/webcraftdg/fractal-cms-core/tree/v2.0.0"
             },
-            "time": "2025-11-19T10:52:13+00:00"
+            "time": "2025-11-20T14:35:31+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1316,234 +1295,10 @@
             "time": "2025-06-05T04:02:45+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "phpspec/php-diff",
-            "version": "v1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpspec/php-diff.git",
-                "reference": "fc1156187f9f6c8395886fe85ed88a0a245d72e9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/php-diff/zipball/fc1156187f9f6c8395886fe85ed88a0a245d72e9",
-                "reference": "fc1156187f9f6c8395886fe85ed88a0a245d72e9",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Diff": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Boulton",
-                    "homepage": "http://github.com/chrisboulton"
-                }
-            ],
-            "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
-            "support": {
-                "source": "https://github.com/phpspec/php-diff/tree/v1.1.3"
-            },
-            "time": "2020-09-18T13:47:07+00:00"
-        },
-        {
-            "name": "yiisoft/yii2-debug",
-            "version": "2.1.27",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "44e158914911ef81cd7111fd6d46b918f65fae7c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/44e158914911ef81cd7111fd6d46b918f65fae7c",
-                "reference": "44e158914911ef81cd7111fd6d46b918f65fae7c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.4",
-                "yiisoft/yii2": "~2.0.13"
-            },
-            "require-dev": {
-                "cweagans/composer-patches": "^1.7",
-                "phpunit/phpunit": "4.8.34",
-                "yiisoft/yii2-coding-standards": "~2.0",
-                "yiisoft/yii2-swiftmailer": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "patches": {
-                    "phpunit/phpunit": {
-                        "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
-                        "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch",
-                        "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php81.patch"
-                    },
-                    "phpunit/phpunit-mock-objects": {
-                        "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
-                    }
-                },
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                },
-                "composer-exit-on-patch-failure": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\debug\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
-                },
-                {
-                    "name": "Simon Karlen",
-                    "email": "simi.albi@outlook.com"
-                }
-            ],
-            "description": "The debugger extension for the Yii framework",
-            "keywords": [
-                "debug",
-                "debugger",
-                "dev",
-                "yii2"
-            ],
-            "support": {
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/yii2-debug/issues",
-                "source": "https://github.com/yiisoft/yii2-debug",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-debug",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-06-08T13:32:11+00:00"
-        },
-        {
-            "name": "yiisoft/yii2-gii",
-            "version": "2.2.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "f17c7ef7ef3081213f612b37ad0ceaa8e8cd3d3b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/f17c7ef7ef3081213f612b37ad0ceaa8e8cd3d3b",
-                "reference": "f17c7ef7ef3081213f612b37ad0ceaa8e8cd3d3b",
-                "shasum": ""
-            },
-            "require": {
-                "phpspec/php-diff": "^1.1.0",
-                "yiisoft/yii2": "~2.0.46"
-            },
-            "require-dev": {
-                "cweagans/composer-patches": "^1.7",
-                "phpunit/phpunit": "4.8.34",
-                "yiisoft/yii2-coding-standards": "~2.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "patches": {
-                    "phpunit/phpunit": {
-                        "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
-                        "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch",
-                        "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php81.patch"
-                    },
-                    "phpunit/php-file-iterator": {
-                        "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_path_file_iterator.patch"
-                    },
-                    "phpunit/phpunit-mock-objects": {
-                        "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
-                    }
-                },
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                },
-                "composer-exit-on-patch-failure": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\gii\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Qiang Xue",
-                    "email": "qiang.xue@gmail.com"
-                }
-            ],
-            "description": "The Gii extension for the Yii framework",
-            "keywords": [
-                "code generator",
-                "dev",
-                "gii",
-                "yii2"
-            ],
-            "support": {
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/yii2-gii/issues",
-                "source": "https://github.com/yiisoft/yii2-gii",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-gii",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-02-13T21:21:17+00:00"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "webcraftdg/fractal-cms-content": 20,
-        "webcraftdg/fractal-cms-core": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
