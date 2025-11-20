@@ -2,9 +2,9 @@
 
 namespace webapp\widgets;
 
-use fractalCms\helpers\Cms;
-use fractalCms\models\Content;
-use fractalCms\models\Item as ItemModel;
+use fractalCms\content\models\Content;
+use fractalCms\content\models\Item as ItemModel;
+use fractalCms\core\models\Parameter;
 use yii\base\Widget;
 use Yii;
 use Exception;
@@ -30,7 +30,7 @@ class Item extends Widget
                 $targetContent = null;
                 $itemEntete = null;
                 $skills = [];
-                if ($this->item->configItemId == Cms::getParameter('ITEM', 'CARD_ARTICLE')) {
+                if ($this->item->configItemId == Parameter::getParameter('ITEM', 'CARD_ARTICLE')) {
                     $target = $this->item?->target;
                     $targetRoute = $target;
                     $id = $target;
@@ -43,7 +43,7 @@ class Item extends Widget
                     $targetContent = Content::findOne($id);
                     if ($targetContent instanceof Content) {
                         $targetRoute = $targetContent->getRoute();
-                        $itemEntete = $targetContent->getItemByConfigId(Cms::getParameter('ITEM', 'ENTETE'));
+                        $itemEntete = $targetContent->getItemByConfigId(Parameter::getParameter('ITEM', 'ENTETE'));
                     }
                 }
 

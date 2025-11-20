@@ -18,9 +18,8 @@ use yii\log\SyslogTarget;
 use yii\redis\Connection as RedisConnection;
 use yii\redis\Cache as RedisCache;
 use yii\caching\CacheInterface;
-use fractalCms\Module as FractalCmsModule;
 use yii\web\View as YiiView;
-use fractalCms\components\View;
+use fractalCms\content\components\View;
 $config = [
     'sourceLanguage' => 'fr',
     'language' => 'fr',
@@ -62,11 +61,15 @@ $config = [
     ],
     'bootstrap' => [
         'log',
-        'fractal-cms'
+        'fractal-cms',
+        'fractal-cms-content',
     ],
     'modules' => [
         'fractal-cms' => [
-            'class' => FractalCmsModule::class
+            'class' => \fractalCms\core\Module::class
+        ],
+        'fractal-cms-content' => [
+            'class' => \fractalCms\content\Module::class
         ]
     ],
     'components' => [

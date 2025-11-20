@@ -3,7 +3,7 @@
   "description": "Projet squelette Blog basé sur FractalCMS – prêt à l'emploi pour démarrer rapidement.",
   "keywords": ["blog", "blog", "fractal-cms", "fractalCms"],
   "homepage": "https://github.com/dghyse/blog-fractal-cms",
-  "version": "1.6.0",
+  "version": "v2.0.0",
   "type": "project",
   "license": "MIT",
   "support": {
@@ -24,11 +24,10 @@
   ],
   "require": {
     "php": ">=8.2",
-    "dghyse/fractal-cms": "~v1.5"
+    "webcraftdg/fractal-cms-core": "v2.0.0",
+    "webcraftdg/fractal-cms-content": "v2.0.0"
   },
   "require-dev" : {
-    "yiisoft/yii2-debug":"~2.0",
-    "yiisoft/yii2-gii":"~2.0"
   },
   "config": {
     "process-timeout": 1800,

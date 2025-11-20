@@ -12,7 +12,8 @@
  * @var array $menu
  *
  */
-use fractalCms\helpers\Html;
+use fractalCms\content\helpers\Html;
+use fractalCms\content\helpers\Cms;
 use yii\helpers\Url;
 use webapp\assets\StaticAsset;
 $baseUrl = StaticAsset::register($this)->baseUrl;
@@ -38,7 +39,7 @@ $logo = $baseUrl.'/img/logo.webp';
             <ul class="flex flex-wrap justify-center md:justify-end gap-2">
                 <?php
                 foreach ($menu as $itemMenu) {
-                    echo Html::tag('li', Html::a(\fractalCms\helpers\Cms::insertIndivisibleSpace($itemMenu['name']), Url::toRoute($itemMenu['route']), ['class' => 'hover:text-blue-400']));
+                    echo Html::tag('li', Html::a(Cms::insertIndivisibleSpace($itemMenu['name']), Url::toRoute($itemMenu['route']), ['class' => 'hover:text-blue-400']));
                 }
                 ?>
             </ul>

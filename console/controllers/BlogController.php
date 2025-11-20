@@ -10,16 +10,15 @@
  */
 namespace console\controllers;
 
-use fractalCms\models\ConfigItem;
-use fractalCms\models\ConfigType;
-use fractalCms\models\Content;
-use fractalCms\models\Item;
-use fractalCms\models\Menu;
-use fractalCms\models\MenuItem;
-use fractalCms\models\Parameter;
-use fractalCms\models\Seo;
-use fractalCms\models\Slug;
-use fractalCms\Module;
+use fractalCms\content\models\ConfigItem;
+use fractalCms\content\models\ConfigType;
+use fractalCms\content\models\Content;
+use fractalCms\content\models\Item;
+use fractalCms\content\models\Menu;
+use fractalCms\content\models\MenuItem;
+use fractalCms\core\models\Parameter;
+use fractalCms\content\models\Seo;
+use fractalCms\content\models\Slug;
 use yii\console\Controller;
 use Exception;
 use Yii;

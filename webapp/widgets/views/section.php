@@ -9,11 +9,13 @@
  *
  * @var $this yii\web\View
  * @var array $section
- * @var \fractalCms\models\Content $element
+ * @var \fractalCms\content\models\Content $element
  * @var int $index
  *
  */
-use fractalCms\helpers\Html;
+
+use fractalCms\content\helpers\Html;
+
 $sectionId = 'home-section-title-'.($index+1);
 $hasImg = (isset($section['hasImg']) === true) ? $section['hasImg'] : false;
 $direction = (isset($section['direction']) === true) ? $section['direction'] : 'right';

@@ -8,15 +8,17 @@
  * @package webapp\views\layouts
  *
  * @var $this yii\web\View
- * @var \fractalCms\models\Item $item
+ * @var \fractalCms\content\models\Item$item
  *
  */
-use fractalCms\helpers\Html;
+use fractalCms\content\helpers\Html;
+use fractalCms\content\helpers\Cms;
+
 $html = $item?->html;
 $image = $item?->image;
 $target = $item?->target;
 $url = $item?->url;
-$html = \fractalCms\helpers\Cms::cleanHtml($html);
+$html = Cms::cleanHtml($html);
 $direction = $item?->choix;
 $route = null;
 if (empty($target) === false) {

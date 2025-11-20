@@ -11,7 +11,7 @@
  * @var array $breadcumb
  *
  */
-use fractalCms\helpers\Html;
+use fractalCms\content\helpers\Html;
 use yii\helpers\Url;
 use webapp\assets\StaticAsset;
 $baseUrl = StaticAsset::register($this)->baseUrl;

@@ -12,8 +12,8 @@
 namespace webapp\controllers;
 
 
-use fractalCms\actions\SitemapAction;
-use fractalCms\models\Content;
+use fractalCms\content\actions\SitemapAction;
+use fractalCms\content\models\Content;
 use Yii;
 use Exception;
 use yii\helpers\Url;
@@ -52,6 +52,28 @@ class SiteController extends Controller
                 return $this->redirect(Url::toRoute($content->getRoute()));
             }
             return $this->render('index', []);
+        } catch (Exception $e) {
+            Yii::error($e->getMessage(), __METHOD__);
+            throw $e;
+        }
+    }
+
+    public function actionError()
+    {
+        try {
+            Yii::debug('Trace :'.__METHOD__, __METHOD__);
+            return $this->render('error', []);
+        } catch (Exception $e) {
+            Yii::error($e->getMessage(), __METHOD__);
+            throw $e;
+        }
+    }
+
+    public function actionMaintenance()
+    {
+        try {
+            Yii::debug('Trace :'.__METHOD__, __METHOD__);
+            return $this->render('maintenance', []);
         } catch (Exception $e) {
             Yii::error($e->getMessage(), __METHOD__);
             throw $e;

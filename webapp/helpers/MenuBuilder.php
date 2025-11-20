@@ -10,10 +10,10 @@
  */
 namespace webapp\helpers;
 
-use fractalCms\helpers\Cms;
-use fractalCms\models\Content;
-use fractalCms\models\Menu;
-use fractalCms\models\MenuItem;
+use fractalCms\core\models\Parameter;
+use fractalCms\content\models\Content;
+use fractalCms\content\models\Menu;
+use fractalCms\content\models\MenuItem;
 use yii\base\Component;
 use Yii;
 use Exception;
@@ -29,7 +29,7 @@ class MenuBuilder extends Component
         try {
             if (empty($this->menu[$name]) === true) {
                 $result = [];
-                $menuId = Cms::getParameter('MENU', $name);
+                $menuId = Parameter::getParameter('MENU', $name);
                 $menu = Menu::findOne($menuId);
                 if ($menu instanceof Menu) {
                     $menuItemsQuery = $menu->getMenuItems(true)->orderBy(['order' => SORT_ASC]);

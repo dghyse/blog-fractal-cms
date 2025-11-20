@@ -19,7 +19,7 @@ $config = require dirname(dirname(__DIR__)).'/common/config/common.php';
 
 $config['basePath'] = dirname(__DIR__);
 $config['id'] = 'dghyse/blog-fractal-cms';
-$config['name'] = 'Blog';
+$config['name'] = 'Blog Fractal CMS';
 
 $config['controllerNamespace'] = 'webapp\controllers';
 
@@ -65,30 +65,9 @@ $isDebug = false;
 if (defined('YII_ENV') && YII_ENV !== 'dev') {
     $config['components']['errorHandler'] = [
         'class' => ErrorHandler::class,
-        'errorAction' => 'technical/error'
+        'errorAction' => 'site/error'
     ];
 }
-
-if (defined('YII_ENV') && YII_ENV === 'dev') {
-    $isDebug = true;
-    $yiiGii = class_exists(yii\gii\Module::class);
-    if ($yiiGii && defined('YII_DEBUG') && YII_DEBUG == true) {
-        $config['modules']['gii'] = [
-            'class' => yii\gii\Module::class,
-            'allowedIPs' => ['*']
-        ];
-        $config['bootstrap'][] = 'gii';
-    }
-    $yiiDebug = class_exists(yii\debug\Module::class);
-    if ($yiiDebug && defined('YII_DEBUG') && YII_DEBUG == true) {
-        $config['modules']['debug'] = [
-            'class' => yii\debug\Module::class,
-            'allowedIPs' => ['*']
-        ];
-        $config['bootstrap'][] = 'debug';
-    }
-}
-
 
 $config['components']['assetManager'] = [
     'linkAssets' => false,
@@ -104,7 +83,7 @@ $config['defaultRoute'] = '/site/index';
 if (YII_MAINTENANCE === true) {
     $allowedIp = preg_split('/\s*,\s*/', getstrenv('YII_MAINTENANCE_ALLOWED_IPS'));
     if (in_array($_SERVER['REMOTE_ADDR'], $allowedIp) === false) {
-        $config['catchAll'] = ['technical/maintenance'];
+        $config['catchAll'] = ['site/maintenance'];
     }
 }
 

@@ -2,12 +2,8 @@
 
 namespace webapp\behaviors;
 
-use fractalCms\controllers\CmsController;
-use fractalCms\helpers\Cms;
-use fractalCms\helpers\Html;
-use fractalCms\models\Content;
-use fractalCms\models\Item;
-use fractalCms\models\Seo;
+use fractalCms\content\controllers\CmsController;
+use fractalCms\content\models\Seo;
 use webapp\assets\StaticAsset;
 use webapp\widgets\Breadcrumb;
 use yii\base\Behavior;
@@ -15,7 +11,7 @@ use Exception;
 use Yii;
 use yii\base\Widget;
 use yii\helpers\Url;
-use fractalCms\components\View;
+use fractalCms\content\components\View;
 
 class JsonLd extends Behavior
 {
