@@ -4,6 +4,7 @@ namespace webapp\widgets;
 
 use fractalCms\content\models\Content;
 use fractalCms\content\models\Item as ItemModel;
+use fractalCms\content\models\Tag;
 use fractalCms\core\models\Parameter;
 use yii\base\Widget;
 use Yii;
@@ -33,14 +34,20 @@ class Item extends Widget
                 if ($this->item->configItemId == Parameter::getParameter('ITEM', 'CARD_ARTICLE')) {
                     $target = $this->item?->target;
                     $targetRoute = $target;
-                    $id = $target;
                     if (is_string($target) === true) {
-                        $params = explode('-', $target);
-                        if(count($params) === 2 && is_numeric($params[1])) {
-                            $id = $params[1];
+                        $urls = explode('/', trim($target, '/'));
+                        if(count($urls) === 2 && is_string($urls[1])) {
+                            $params = explode('-', $urls[1]);
+                            if (count($params) === 2 && is_string($params[1])) {
+                                $id = $params[1];
+                                if ($params[0] === 'tag') {
+                                    $targetContent = Tag::findOne($id);
+                                } else {
+                                    $targetContent = Content::findOne($id);
+                                }
+                            }
                         }
                     }
-                    $targetContent = Content::findOne($id);
                     if ($targetContent instanceof Content) {
                         $targetRoute = $targetContent->getRoute();
                         $itemEntete = $targetContent->getItemByConfigId(Parameter::getParameter('ITEM', 'ENTETE'));
