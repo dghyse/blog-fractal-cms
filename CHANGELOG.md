@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+Release v2.0.1 29/11/2025 <davidg@webcraftdg.fr>
+----------------------------------------------
+
+* Fix content route manage in widget Item
+
+
 Release v2.0.0 20/11/2025 <davidg@webcraftdg.fr>
 ----------------------------------------------
 

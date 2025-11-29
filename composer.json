@@ -3,7 +3,7 @@
   "description": "Projet squelette Blog basé sur FractalCMS – prêt à l'emploi pour démarrer rapidement.",
   "keywords": ["blog", "blog", "fractal-cms", "fractalCms"],
   "homepage": "https://github.com/dghyse/blog-fractal-cms",
-  "version": "v2.0.0",
+  "version": "v2.0.1",
   "type": "project",
   "license": "MIT",
   "support": {
