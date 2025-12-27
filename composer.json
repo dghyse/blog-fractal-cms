@@ -1,9 +1,12 @@
 {
   "name": "dghyse/blog-fractal-cms",
-  "description": "Projet squelette Blog basé sur FractalCMS – prêt à l'emploi pour démarrer rapidement.",
+  "description": "⚠️ OBSOLETE",
+  "abandoned": true,
+  "replace": {
+    "webcraftdg/creer-mon-site-facilement": "*"
+  },
   "keywords": ["blog", "blog", "fractal-cms", "fractalCms"],
   "homepage": "https://github.com/dghyse/blog-fractal-cms",
-  "version": "v2.0.1",
   "type": "project",
   "license": "MIT",
   "support": {
@@ -23,11 +26,10 @@
     }
   ],
   "require": {
-    "php": ">=8.2",
-    "webcraftdg/fractal-cms-core": "v2.0.0",
-    "webcraftdg/fractal-cms-content": "v2.0.0"
-  },
-  "require-dev" : {
+    "php": ">=8.3",
+    "vlucas/phpdotenv": "^5.6",
+    "webcraftdg/fractal-cms-content": "^v2.0.0",
+    "webcraftdg/fractal-cms-core": "^v2.0.0"
   },
   "config": {
     "process-timeout": 1800,
