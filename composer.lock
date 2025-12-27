@@ -4,35 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c476a31af754fa1722ebf96d31b0b763",
+    "content-hash": "efd163182b0007c5baa76199af04796d",
     "packages": [
         {
-            "name": "bower-asset/bootstrap",
-            "version": "v5.2.3",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:twbs/bootstrap.git",
-                "reference": "cb021439c683d9805e2864c58095b92d405e9b11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/cb021439c683d9805e2864c58095b92d405e9b11",
-                "reference": "cb021439c683d9805e2864c58095b92d405e9b11"
-            },
-            "type": "bower-asset"
-        },
-        {
             "name": "bower-asset/inputmask",
-            "version": "5.0.8",
+            "version": "5.0.9",
             "source": {
                 "type": "git",
                 "url": "git@github.com:RobinHerbots/Inputmask.git",
-                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
+                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/e0f39e0c93569c6b494c3a57edef2c59313a6b64",
-                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/310a33557e2944daf86d5946a5e8c82b9118f8f7",
+                "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
@@ -44,16 +29,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "3.6.4",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:jquery/jquery-dist.git",
-                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
+                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/91ef2d8836342875f2519b5815197ea0f23613cf",
-                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/fde1f76e2799dd877c176abde0ec836553246991",
+                "reference": "fde1f76e2799dd877c176abde0ec836553246991"
             },
             "type": "bower-asset",
             "license": [
@@ -65,12 +50,12 @@
             "version": "v1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mathiasbynens/punycode.js.git",
+                "url": "git@github.com:bestiejs/punycode.js.git",
                 "reference": "0fbadd6e81f3a0ce06c38998040d6db6bdfbc5c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mathiasbynens/punycode.js/zipball/0fbadd6e81f3a0ce06c38998040d6db6bdfbc5c9",
+                "url": "https://api.github.com/repos/bestiejs/punycode.js/zipball/0fbadd6e81f3a0ce06c38998040d6db6bdfbc5c9",
                 "reference": "0fbadd6e81f3a0ce06c38998040d6db6bdfbc5c9"
             },
             "type": "bower-asset"
@@ -80,7 +65,7 @@
             "version": "2.0.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "url": "git@github.com:yiisoft/jquery-pjax.git",
                 "reference": "a9298d57da63d14a950f1b94366a864bc62264fb"
             },
             "dist": {
@@ -884,41 +869,35 @@
         },
         {
             "name": "webcraftdg/fractal-cms-content",
-            "version": "v2.0.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webcraftdg/fractal-cms-content.git",
-                "reference": "43a7be4737f5423d27fbd24f4407ce2767159684"
+                "reference": "fc090a73a387ab70b1e83c15a56af213392cc387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-content/zipball/43a7be4737f5423d27fbd24f4407ce2767159684",
-                "reference": "43a7be4737f5423d27fbd24f4407ce2767159684",
+                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-content/zipball/fc090a73a387ab70b1e83c15a56af213392cc387",
+                "reference": "fc090a73a387ab70b1e83c15a56af213392cc387",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap": "~5.0",
                 "ext-dom": "*",
                 "ext-fileinfo": "*",
                 "ext-gd": "*",
                 "ext-intl": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "league/flysystem": "^3.25",
-                "php": ">=8.2",
-                "vlucas/phpdotenv": "~5.0",
-                "webcraftdg/fractal-cms-core": "v2.0.0",
-                "yiisoft/yii2": "~2.0",
-                "yiisoft/yii2-redis": "~2.0"
+                "php": ">=8.3",
+                "webcraftdg/fractal-cms-core": "^v2.2.0",
+                "yiisoft/yii2": "^2.0"
             },
             "require-dev": {
                 "codeception/codeception": "^5.3",
                 "codeception/module-asserts": "*",
                 "codeception/module-db": "^3.2",
                 "codeception/module-phpbrowser": "*",
-                "codeception/module-yii2": "^2.0",
-                "yiisoft/yii2-debug": "~2.0",
-                "yiisoft/yii2-gii": "~2.0"
+                "codeception/module-yii2": "^2.0"
             },
             "type": "library",
             "autoload": {
@@ -949,26 +928,25 @@
             ],
             "support": {
                 "issues": "https://github.com/webcraftdg/fractal-cms-content/issues",
-                "source": "https://github.com/webcraftdg/fractal-cms-content/tree/v2.0.0"
+                "source": "https://github.com/webcraftdg/fractal-cms-content/tree/v2.2.1"
             },
-            "time": "2025-11-20T14:43:03+00:00"
+            "time": "2025-12-26T19:16:05+00:00"
         },
         {
             "name": "webcraftdg/fractal-cms-core",
-            "version": "v2.0.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webcraftdg/fractal-cms-core.git",
-                "reference": "e9bde5a476a606a942a93d3dcef0bc68532ff773"
+                "reference": "06f5bf4138834c4646cbf6669121fb8fc9b22e21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-core/zipball/e9bde5a476a606a942a93d3dcef0bc68532ff773",
-                "reference": "e9bde5a476a606a942a93d3dcef0bc68532ff773",
+                "url": "https://api.github.com/repos/webcraftdg/fractal-cms-core/zipball/06f5bf4138834c4646cbf6669121fb8fc9b22e21",
+                "reference": "06f5bf4138834c4646cbf6669121fb8fc9b22e21",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/bootstrap": "~5.0",
                 "ext-dom": "*",
                 "ext-fileinfo": "*",
                 "ext-gd": "*",
@@ -976,19 +954,15 @@
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "league/flysystem": "^3.25",
-                "php": ">=8.2",
-                "vlucas/phpdotenv": "~5.0",
-                "yiisoft/yii2": "~2.0",
-                "yiisoft/yii2-redis": "~2.0"
+                "php": ">=8.3",
+                "yiisoft/yii2": "^2.0"
             },
             "require-dev": {
                 "codeception/codeception": "^5.3",
                 "codeception/module-asserts": "*",
                 "codeception/module-db": "^3.2",
                 "codeception/module-phpbrowser": "*",
-                "codeception/module-yii2": "^2.0",
-                "yiisoft/yii2-debug": "~2.0",
-                "yiisoft/yii2-gii": "~2.0"
+                "codeception/module-yii2": "^2.0"
             },
             "type": "library",
             "autoload": {
@@ -1019,9 +993,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webcraftdg/fractal-cms-core/issues",
-                "source": "https://github.com/webcraftdg/fractal-cms-core/tree/v2.0.0"
+                "source": "https://github.com/webcraftdg/fractal-cms-core/tree/v2.2.1"
             },
-            "time": "2025-11-20T14:35:31+00:00"
+            "time": "2025-12-26T19:23:06+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1219,80 +1193,6 @@
                 }
             ],
             "time": "2025-02-13T20:59:36+00:00"
-        },
-        {
-            "name": "yiisoft/yii2-redis",
-            "version": "2.0.20",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yiisoft/yii2-redis.git",
-                "reference": "d5b89cb4977b73bc813d3b85a1017337ac64267c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-redis/zipball/d5b89cb4977b73bc813d3b85a1017337ac64267c",
-                "reference": "d5b89cb4977b73bc813d3b85a1017337ac64267c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "yiisoft/yii2": "~2.0.39"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "<7",
-                "yiisoft/yii2-dev": "~2.0.39"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\redis\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Carsten Brandt",
-                    "email": "mail@cebe.cc"
-                }
-            ],
-            "description": "Redis Cache, Session and ActiveRecord for the Yii framework",
-            "keywords": [
-                "active-record",
-                "cache",
-                "redis",
-                "session",
-                "yii2"
-            ],
-            "support": {
-                "forum": "https://www.yiiframework.com/forum/",
-                "irc": "ircs://irc.libera.chat:6697/yii",
-                "issues": "https://github.com/yiisoft/yii2-redis/issues",
-                "source": "https://github.com/yiisoft/yii2-redis",
-                "wiki": "https://www.yiiframework.com/wiki/"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/yiisoft",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-redis",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-06-05T04:02:45+00:00"
         }
     ],
     "packages-dev": [],
@@ -1302,8 +1202,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.2"
+        "php": ">=8.3"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
